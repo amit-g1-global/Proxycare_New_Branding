@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 301 Redirect old .html pages to the new React routes
+  RewriteRule ^blogs\.html$ /blogs [R=301,L]
+  RewriteRule ^who-we-are\.html$ / [R=301,L]
+  RewriteRule ^terms-and-conditions\.html$ /terms-and-conditions [R=301,L]
+  RewriteRule ^privacy-policy\.html$ /privacy-policy [R=301,L]
+
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteRule . /index.html [L]
+</IfModule>
