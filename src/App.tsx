@@ -49,7 +49,7 @@ export default function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/terms-and-conditions" element={<TermsPage />} />
           <Route path="/privacy-policy" element={<PrivacyPage />} />
-          <Route path="/links" element={<LinksPage />} />
+          <Route path="/brief" element={<LinksPage />} />
         </Routes>
       </NavHighlightProvider>
     </BrowserRouter>
