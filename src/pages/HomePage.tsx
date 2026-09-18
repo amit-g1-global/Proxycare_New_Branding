@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { SECTION_IDS } from '../context/NavHighlightContext';
 import { scrollToSectionId } from '../utils/scrollToSection';
@@ -47,75 +47,125 @@ import Ifen from '../assets/Ifen.svg';
 import Parvez_Image from '../assets/Parvez.jpg';
 
 /* ── Hero ── */
-const Hero = () => (
-  <section className="pc-hero">
-    <div className="pc-hero-bg-blob" />
-    <div className="pc-hero-inner">
-      {/* Left */}
-      <div className="pc-hero-left">
-        <h1 className="pc-hero-h1">
-          Your family's<br className="pc-br-desktop" /> healthcare, finally<br className="pc-br-desktop" /> in one place
-        </h1>
-        <p className="pc-hero-desc">
-          Proxycare acts as your dedicated healthcare proxy - organizing your medical records, coordinating your doctors and hospitals, and ensuring nothing falls through the cracks. So you can focus on care, not logistics.
-        </p>
-        <Link to="/contact" className="pc-btn-primary" style={{ textDecoration: 'none' }}>
-          Get started
-        </Link>
-      </div>
+const Hero = () => {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
+  useEffect(() => {
+    if (isVideoOpen && videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.play().catch(console.error);
+    } else if (!isVideoOpen && videoRef.current) {
+      videoRef.current.pause();
+    }
+  }, [isVideoOpen]);
 
-      {/* Right - decorative image area */}
-      <div className="pc-hero-right">
-        {/* Main image */}
-        <img
-          src={Hero_Image}
-          alt="Family healthcare"
-          className="pc-hero-image-main"
-        />
-
-        {/* Float cards */}
-        <div className="pc-float-card card-navy pc-card-top-right">
-          <div className="pc-float-card-icon"><img src={user_group} alt="Family" style={{ width: 32, height: 32 }} /></div>
-          <div className="pc-float-card-label">Family first</div>
-        </div>
-        <div className="pc-float-card card-red pc-card-left-mid">
-          <div className="pc-float-card-icon" style={{ border: '2px solid rgba(255,255,255,0.6)', borderRadius: 10, padding: 4 }}>
-            <img src={shield_plus} alt="Secure" style={{ width: 24, height: 24 }} />
-          </div>
-          <div className="pc-float-card-label">Secure &amp; private Application</div>
-        </div>
-        <div className="pc-float-card card-light pc-card-bot-right">
-          <div className="pc-float-card-icon"><img src={Digitized_Records} alt="Records" style={{ width: 28, height: 28 }} /></div>
-          <div className="pc-float-card-label">All records organized</div>
-        </div>
-      </div>
-    </div>
-
-    {/* Features bar */}
-    <div style={{ padding: '0 24px 24px', position: 'relative', zIndex: 2 }}>
-      <div className="pc-features-bar">
-        {[
-          { icon: <img src={user_group} alt="" style={{ width: 30, height: 30 }} />, title: 'Digitize', sub: 'All your records' },
-          { icon: <img src={shield_plus} alt="" style={{ width: 28, height: 28 }} />, title: 'Dedicated', sub: 'Health assistant' },
-          { icon: <img src={Fastrack} alt="" style={{ width: 28, height: 28 }} />, title: 'FastTrack', sub: 'At network hospitals' },
-          { icon: <img src={hours_clock} alt="" style={{ width: 28, height: 28 }} />, title: '24/7', sub: 'Emergency support' },
-        ].map((f, i) => (
-          <React.Fragment key={f.title}>
-            <div className="pc-feature-item">
-              <div className="pc-feature-icon-wrap">{f.icon}</div>
-              <div>
-                <div className="pc-feature-title">{f.title}</div>
-                <div className="pc-feature-sub">{f.sub}</div>
-              </div>
+  return (
+    <section className="pc-hero">
+      <div className="pc-hero-slide pc-hero-slide-main" style={{ position: 'relative' }}>
+        <div className="pc-hero-bg-blob" />
+        <div className="pc-hero-inner">
+          <div className="pc-hero-left">
+            <h1 className="pc-hero-h1">
+              Your family's<br className="pc-br-desktop" /> healthcare, finally<br className="pc-br-desktop" /> in one place
+            </h1>
+            <p className="pc-hero-desc">
+              Proxycare acts as your dedicated healthcare proxy - organizing your medical records, coordinating your doctors and hospitals, and ensuring nothing falls through the cracks. So you can focus on care, not logistics.
+            </p>
+            <div className="pc-hero-actions">
+              <Link to="/contact" className="pc-btn-primary" style={{ textDecoration: 'none' }}>
+                Get started
+              </Link>
+              <button 
+                onClick={() => setIsVideoOpen(true)}
+                className="pc-btn-secondary" 
+                style={{ 
+                  background: 'transparent', 
+                  border: '1px solid #1147a8', 
+                  color: '#1147a8', 
+                  padding: '17px 32px', 
+                  borderRadius: 12, 
+                  fontWeight: 600, 
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 8,
+                  fontSize: 16
+                }}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                Learn more
+              </button>
             </div>
-            {i < 3 && <div className="pc-vdivider" />}
-          </React.Fragment>
-        ))}
+          </div>
+
+          <div className="pc-hero-right">
+            <img
+              src={Hero_Image}
+              alt="Family healthcare"
+              className="pc-hero-image-main"
+            />
+            <div className="pc-float-card card-navy pc-card-top-right">
+              <div className="pc-float-card-icon"><img src={user_group} alt="Family" style={{ width: 32, height: 32 }} /></div>
+              <div className="pc-float-card-label">Family first</div>
+            </div>
+            <div className="pc-float-card card-red pc-card-left-mid">
+              <div className="pc-float-card-icon" style={{ border: '2px solid rgba(255,255,255,0.6)', borderRadius: 10, padding: 4 }}>
+                <img src={shield_plus} alt="Secure" style={{ width: 24, height: 24 }} />
+              </div>
+              <div className="pc-float-card-label">Secure &amp; private Application</div>
+            </div>
+            <div className="pc-float-card card-light pc-card-bot-right">
+              <div className="pc-float-card-icon"><img src={Digitized_Records} alt="Records" style={{ width: 28, height: 28 }} /></div>
+              <div className="pc-float-card-label">All records organized</div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
-);
+
+      {/* Video Modal Popup */}
+      {isVideoOpen && (
+        <div 
+          className="pc-video-modal-overlay" 
+          onClick={() => setIsVideoOpen(false)}
+        >
+          <div className="pc-video-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="pc-video-modal-close" onClick={() => setIsVideoOpen(false)}>✕</button>
+            <video
+              ref={videoRef}
+              src="/assets/1MIN_30SEC_INTRO_VIDEO.mp4"
+              className="pc-hero-video-player"
+              controls={true}
+              playsInline
+              style={{ width: '100%', height: 'auto', display: 'block' }}
+            />
+          </div>
+        </div>
+      )}
+
+      <div style={{ padding: '0 24px 24px', position: 'relative', zIndex: 2 }}>
+        <div className="pc-features-bar">
+          {[
+            { icon: <img src={user_group} alt="" style={{ width: 30, height: 30 }} />, title: 'Digitize', sub: 'All your records' },
+            { icon: <img src={shield_plus} alt="" style={{ width: 28, height: 28 }} />, title: 'Dedicated', sub: 'Health assistant' },
+            { icon: <img src={Fastrack} alt="" style={{ width: 28, height: 28 }} />, title: 'FastTrack', sub: 'At network hospitals' },
+            { icon: <img src={hours_clock} alt="" style={{ width: 28, height: 28 }} />, title: '24/7', sub: 'Emergency support' },
+          ].map((f, i) => (
+            <React.Fragment key={f.title}>
+              <div className="pc-feature-item">
+                <div className="pc-feature-icon-wrap">{f.icon}</div>
+                <div>
+                  <div className="pc-feature-title">{f.title}</div>
+                  <div className="pc-feature-sub">{f.sub}</div>
+                </div>
+              </div>
+              {i < 3 && <div className="pc-vdivider" />}
+            </React.Fragment>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
 /* ── Comparison / What We Do ── */
 const WhatWeDo = () => (
@@ -283,6 +333,39 @@ const UseCases = () => (
   </section>
 );
 
+/* ── Subscription CTA ── */
+const SubscriptionCTA = () => (
+  <section style={{ background: '#faf6f0', padding: '0 0 80px' }}>
+    <div className="pc-container" style={{ padding: '0 24px' }}>
+      <FadeIn>
+        <div style={{
+          background: 'linear-gradient(to right, #0d2137, #1147a8)',
+          borderRadius: 32,
+          padding: '56px 40px',
+          color: '#fff',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          textAlign: 'center',
+          gap: 20
+        }}>
+          <h2 style={{ fontSize: 36, fontWeight: 600, margin: 0, fontFamily: '"Playfair Display", serif' }}>
+            Does this feel like you?
+          </h2>
+          <p style={{ fontSize: 18, lineHeight: 1.6, maxWidth: 760, margin: 0, opacity: 0.9 }}>
+            Get the support, structure, and ongoing care coordination your family needs all through one subscription.
+            <br /><br />
+            Reach out to learn about our subscription plans and find the right fit for your family.
+          </p>
+          <Link to="/contact" className="pc-btn-primary" style={{ background: '#fff', color: '#0d2137', marginTop: 16 }}>
+            CONTACT US
+          </Link>
+        </div>
+      </FadeIn>
+    </div>
+  </section>
+);
+
 /* ── Team ── */
 const Team = () => (
   <section id="our-team" style={{ background: '#faf6f0', padding: '20px 0 80px' }}>
@@ -428,7 +511,7 @@ const faqs = [
 const FAQ = () => {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
   return (
-    <section className="pc-faq-section" style={{ padding: '20px 0 80px' }}>
+    <section id="faq" className="pc-faq-section" style={{ padding: '20px 0 80px' }}>
       <div className="pc-container">
         <div style={{ textAlign: 'center', marginBottom: 48 }}>
           <span className="pc-pill pc-faq-pill">FAQ</span>
@@ -483,6 +566,7 @@ export default function HomePage() {
       <Steps />
       <Services />
       <UseCases />
+      <SubscriptionCTA />
       <Team />
       {/* <Testimonials /> */}
       <FAQ />

@@ -2,7 +2,7 @@ import React, { createContext, useCallback, useContext, useEffect, useMemo, useS
 import { useLocation } from 'react-router-dom';
 
 /** Document order on home page — used by scroll spy so the correct section highlights. */
-export const SECTION_IDS = ['what-we-do', 'how-it-works', 'our-team', 'contact'] as const;
+export const SECTION_IDS = ['what-we-do', 'how-it-works', 'our-team', 'faq', 'contact'] as const;
 
 type NavHighlightContextValue = {
   activeSection: string;

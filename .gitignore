@@ -7,3 +7,5 @@ coverage/
 .env*
 !.env.example
 public/assets/Proxycare_Femal_Voice.mp4
+
+public/assets/1MIN_30SEC_INTRO_VIDEO.mp4

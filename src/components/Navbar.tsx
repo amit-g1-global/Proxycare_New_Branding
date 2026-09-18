@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import Logo_Main from '../assets/Logo_Main.png';
 import { useNavHighlight } from '../context/NavHighlightContext';
 import { PROXYCARE_LOGIN_URL } from '../constants/externalLinks';
@@ -15,6 +15,7 @@ const sectionLinks = [
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [mediaOpen, setMediaOpen] = useState(false);
   const { activeSection } = useNavHighlight();
 
   useEffect(() => {
@@ -44,14 +45,27 @@ export const Navbar = () => {
             {label}
           </SectionNavLink>
         ))}
-        <NavLink
-          to="/blogs"
-          end={false}
-          className={({ isActive }) => (isActive ? 'pc-nav-link-active' : undefined)}
-          onClick={() => setOpen(false)}
-        >
-          Blogs
-        </NavLink>
+        <div className="pc-nav-dropdown">
+          <span className="pc-nav-dropdown-toggle">
+            Media <ChevronDown size={16} />
+          </span>
+          <div className="pc-nav-dropdown-menu">
+            <NavLink 
+              to="/video" 
+              className={({ isActive }) => `pc-nav-dropdown-item ${isActive ? 'active' : ''}`}
+              onClick={() => setOpen(false)}
+            >
+              Our Journey
+            </NavLink>
+            <NavLink 
+              to="/blogs" 
+              className={({ isActive }) => `pc-nav-dropdown-item ${isActive ? 'active' : ''}`}
+              onClick={() => setOpen(false)}
+            >
+              Blogs
+            </NavLink>
+          </div>
+        </div>
         <NavLink
           to="/contact"
           end={false}
@@ -83,9 +97,26 @@ export const Navbar = () => {
             {label}
           </SectionNavLink>
         ))}
-        <NavLink to="/blogs" end={false} onClick={() => setOpen(false)} className={({ isActive }) => (isActive ? 'pc-nav-link-active' : undefined)}>
-          Blogs
-        </NavLink>
+        <div className={`pc-nav-mobile-dropdown ${mediaOpen ? 'open' : ''}`}>
+          <span 
+            className="pc-nav-mobile-dropdown-toggle"
+            onClick={() => setMediaOpen(!mediaOpen)}
+          >
+            Media <ChevronDown size={16} />
+          </span>
+          <div className="pc-nav-mobile-dropdown-menu">
+            <NavLink 
+              to="/video" 
+              className={({ isActive }) => (isActive ? 'pc-nav-link-active' : undefined)}
+              onClick={() => { setOpen(false); setMediaOpen(false); }}
+            >
+              Our Journey
+            </NavLink>
+            <NavLink to="/blogs" end={false} onClick={() => { setOpen(false); setMediaOpen(false); }} className={({ isActive }) => (isActive ? 'pc-nav-link-active' : undefined)}>
+              Blogs
+            </NavLink>
+          </div>
+        </div>
         <NavLink to="/contact" end={false} onClick={() => setOpen(false)} className={({ isActive }) => (isActive ? 'pc-nav-link-active' : undefined)}>
           Contact us
         </NavLink>

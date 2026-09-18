@@ -9,6 +9,7 @@ import ContactPage from './pages/ContactPage';
 import TermsPage from './pages/TermsPage';
 import PrivacyPage from './pages/PrivacyPage';
 import LinksPage from './pages/LinksPage';
+import VideoPage from './pages/VideoPage';
 import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
@@ -50,6 +51,7 @@ export default function App() {
           <Route path="/terms-and-conditions" element={<TermsPage />} />
           <Route path="/privacy-policy" element={<PrivacyPage />} />
           <Route path="/brief" element={<LinksPage />} />
+          <Route path="/video" element={<VideoPage />} />
         </Routes>
       </NavHighlightProvider>
     </BrowserRouter>
