@@ -67,7 +67,10 @@ const Hero = () => {
         <div className="pc-hero-inner">
           <div className="pc-hero-left">
             <h1 className="pc-hero-h1">
-              Your family's<br className="pc-br-desktop" /> healthcare, finally<br className="pc-br-desktop" /> in one place
+              Meet your personal<br className="pc-br-desktop" /> health manager
+              <span style={{ display: 'block', fontSize: '0.55em', color: '#1147a8', marginTop: '16px', fontWeight: 600, fontFamily: '"Inter", sans-serif', letterSpacing: '1px', textTransform: 'uppercase' }}>
+                Human driven <span style={{ color: '#c8d7ee', margin: '0 8px' }}>|</span> AI Enabled
+              </span>
             </h1>
             <p className="pc-hero-desc">
               Proxycare acts as your dedicated healthcare proxy - organizing your medical records, coordinating your doctors and hospitals, and ensuring nothing falls through the cracks. So you can focus on care, not logistics.
