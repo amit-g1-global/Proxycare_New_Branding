@@ -69,7 +69,7 @@ const Hero = () => {
             <h1 className="pc-hero-h1">
               Meet your personal<br className="pc-br-desktop" /> health manager
               <span style={{ display: 'block', fontSize: '0.55em', color: '#1147a8', marginTop: '16px', fontWeight: 600, fontFamily: '"Inter", sans-serif', letterSpacing: '1px', textTransform: 'uppercase' }}>
-                Human driven <span style={{ color: '#c8d7ee', margin: '0 8px' }}>|</span> AI Enabled
+                AI Enabled <span style={{ color: '#c8d7ee', margin: '0 8px' }}>|</span> Human controlled
               </span>
             </h1>
             <p className="pc-hero-desc">
