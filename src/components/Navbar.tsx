@@ -80,7 +80,7 @@ export const Navbar = () => {
         className="pc-btn-login"
         rel="noopener noreferrer"
       >
-        Login
+        Member Portal
       </a>
       <button 
         className={`pc-nav-mobile-toggle ${open ? 'open' : ''}`} 
@@ -126,7 +126,7 @@ export const Navbar = () => {
           rel="noopener noreferrer"
           onClick={() => setOpen(false)}
         >
-          Login
+          Member Portal
         </a>
       </div>
     </nav>
