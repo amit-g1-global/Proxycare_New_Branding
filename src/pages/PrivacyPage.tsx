@@ -19,13 +19,13 @@ export default function PrivacyPage() {
           {/* Section 1: Introduction */}
           <section style={{ marginBottom: '40px' }}>
             <p style={{ fontSize: '16px', fontWeight: 500, color: '#0d2137', marginBottom: '16px' }}>
-              At ProHealth Services LLP, your privacy isn't just a policy – it's a promise.
+              At ProHealth Services LLP, your privacy isn't just a policy - it's a promise.
             </p>
             <p style={{ marginBottom: '16px' }}>
               As a pioneering entity in ProHealth Services LLP, we recognize the paramount importance of safeguarding personal data and upholding the trust you bestow upon us. Our commitment is underpinned by transparency and integrity. This policy elucidates the manner in which we handle, use, and store your data. When you visit our website or engage with our services, you do so with the assurance that your information is secure and that you acknowledge the practices described herein.
             </p>
             <p style={{ margin: 0 }}>
-              Our principle is simple – minimal, purposeful data collection. The sole piece of personal data we gather is your email address, and this isn't done covertly or without reason. We collect it only when you, the user, voluntarily provide it to us, often through forms or subscription services on our website. You always have a choice, and your consent is the foundation of our data collection.
+              Our principle is simple - minimal, purposeful data collection. The sole piece of personal data we gather is your email address, and this isn't done covertly or without reason. We collect it only when you, the user, voluntarily provide it to us, often through forms or subscription services on our website. You always have a choice, and your consent is the foundation of our data collection.
             </p>
           </section>
 
@@ -176,7 +176,7 @@ export default function PrivacyPage() {
               </li>
             </ul>
             <p style={{ margin: '0 0 16px' }}>
-              Recognizing the importance of clear communication, ProHealth has established a direct communication channel for all privacy-related concerns. Users can effortlessly reach out via the 'Contact Us' form on our platform or email us directly at <a href="mailto:sales@proxy.care" style={{ color: '#1147a8', textDecoration: 'none', fontWeight: 500 }}>sales@proxy.care</a>.
+              Recognizing the importance of clear communication, ProHealth has established a direct communication channel for all privacy-related concerns. Users can effortlessly reach out via the 'Get Started' form on our platform or email us directly at <a href="mailto:sales@proxy.care" style={{ color: '#1147a8', textDecoration: 'none', fontWeight: 500 }}>sales@proxy.care</a>.
             </p>
             <p style={{ margin: 0 }}>
               At ProHealth, we view our relationship with users as a partnership. Feedback, be it positive or areas of improvement, is invaluable to us, and our dedicated team works diligently to address all queries in the shortest possible timeframe.

@@ -29,25 +29,25 @@ export const blogPosts: BlogPost[] = [
     slug: 'preventive-care-tips',
     image: blogImg1,
     category: 'Health Care',
-    title: 'Preventive Care Tips: How High–Net–Worth Families Stay Ahead of Health Risks',
+    title: 'Preventive Care Tips: How High-Net-Worth Families Stay Ahead of Health Risks',
     excerpt: 'Discover how high-net-worth families stay ahead of health risks with preventive care and personalized wellness plans.',
     date: '05 Oct 2025',
     readTime: '7 min read',
     intro: [
-      'In today’s fast-paced world, maintaining good health often takes a backseat – especially for affluent, busy, demanding lifestyles. Preventive medicine is working harder than ever with high-net-worth families to keep them healthy, with changes that build into routine and habit – not stress.',
+      'In today’s fast-paced world, maintaining good health often takes a backseat - especially for affluent, busy, demanding lifestyles. Preventive medicine is working harder than ever with high-net-worth families to keep them healthy, with changes that build into routine and habit - not stress.',
       'Here’s what preventive care can mean. It isn’t just about check-ups or tests; it’s about making proactive choices tailored for your family. Here are five high-impact changes that could bring that next-level approach to health.'
     ],
     sections: [
       {
         heading: '1. Make Preventive Care a Lifestyle Habit',
         paragraphs: [
-          'Build preventive schedules into the routine—regular screenings, wellness checks, and real-world consultations throughout the year.'
+          'Build preventive schedules into the routine - regular screenings, wellness checks, and real-world consultations throughout the year.'
         ]
       },
       {
         heading: '2. Personalized Health Plans for Each Family Member',
         paragraphs: [
-          'Medical needs, genetics, and goals differ. Leading families rely on personalized, physician-created plans—proactive testing, AI-driven recommendations, and digital check-ins.'
+          'Medical needs, genetics, and goals differ. Leading families rely on personalized, physician-created plans - proactive testing, AI-driven recommendations, and digital check-ins.'
         ]
       },
       {
@@ -71,7 +71,7 @@ export const blogPosts: BlogPost[] = [
     ],
     closingTitle: 'Staying Ahead is the Best Kind of Care',
     closingParagraphs: [
-      'For families who value time, privacy, and health, preventive care is not a luxury. It’s lifestyle choice – made easier with Proxycare.'
+      'For families who value time, privacy, and health, preventive care is not a luxury. It’s lifestyle choice - made easier with Proxycare.'
     ]
   },
   */
@@ -91,20 +91,20 @@ export const blogPosts: BlogPost[] = [
       {
         heading: '1. Understanding an Emergency Plan',
         paragraphs: [
-          'An emergency plan is a proactive approach that outlines the critical steps to take when urgent medical care is needed. It’s more than just a list of hospitals or emergency numbers — it’s a well-orchestrated system that ensures your family receives the right care, at the right time, with zero confusion.',
-          'For high-net-worth families who travel often or manage multiple residences, having a personalized plan brings structure and reliability. It ensures continuity of care — whether you’re at home, on vacation, or abroad.'
+          'An emergency plan is a proactive approach that outlines the critical steps to take when urgent medical care is needed. It’s more than just a list of hospitals or emergency numbers - it’s a well-orchestrated system that ensures your family receives the right care, at the right time, with zero confusion.',
+          'For high-net-worth families who travel often or manage multiple residences, having a personalized plan brings structure and reliability. It ensures continuity of care - whether you’re at home, on vacation, or abroad.'
         ]
       },
       {
         heading: '2. Why Every Family Needs One',
         paragraphs: [
           'Even the most advanced medical systems can feel overwhelming during a crisis. Having a plan in place helps you:',
-          '• Avoid panic and delay – When everyone knows what to do, response time improves dramatically.',
-          '• Get the right help faster – Pre-identified hospitals, specialists, and care teams save crucial minutes.',
-          '• Stay organized – With updated medical histories and insurance details ready, treatment begins sooner.',
-          '• Ensure family coordination – Everyone, from parents to caregivers, understands their role in an emergency.',
-          '• It’s not about fearing the worst — it’s about being ready for anything.',
-          '• Avoid panic and delay – When everyone knows what to do, response time improves dramatically.'
+          '• Avoid panic and delay - When everyone knows what to do, response time improves dramatically.',
+          '• Get the right help faster - Pre-identified hospitals, specialists, and care teams save crucial minutes.',
+          '• Stay organized - With updated medical histories and insurance details ready, treatment begins sooner.',
+          '• Ensure family coordination - Everyone, from parents to caregivers, understands their role in an emergency.',
+          '• It’s not about fearing the worst - it’s about being ready for anything.',
+          '• Avoid panic and delay - When everyone knows what to do, response time improves dramatically.'
         ]
       },
       {
@@ -143,14 +143,14 @@ export const blogPosts: BlogPost[] = [
     date: '05 Oct 2025',
     readTime: '7 min read',
     intro: [
-      'When a sudden health concern arises – whether it’s a high fever, chest discomfort, or an unexpected illness – one question often causes confusion for families: Should we go to the hospital, or can this be managed at home?',
+      'When a sudden health concern arises - whether it’s a high fever, chest discomfort, or an unexpected illness - one question often causes confusion for families: Should we go to the hospital, or can this be managed at home?',
       'Making the right decision in those moments can mean the difference between unnecessary stress and timely, effective care.'
     ],
     sections: [
       {
         heading: 'Understanding the Difference',
         paragraphs: [
-          'Hospitals are designed for complex medical cases and emergencies that require specialized equipment, immediate interventions, or inpatient care. Home care, on the other hand, focuses on providing timely medical attention for non-life-threatening conditions—often with the comfort and familiarity of your own space. Concierge medical services bridge these two worlds. With dedicated primary care providers and on-call health assistants, families can receive expert assessments and treatment at home, reducing the need for frequent hospital visits.'
+          'Hospitals are designed for complex medical cases and emergencies that require specialized equipment, immediate interventions, or inpatient care. Home care, on the other hand, focuses on providing timely medical attention for non-life-threatening conditions - often with the comfort and familiarity of your own space. Concierge medical services bridge these two worlds. With dedicated primary care providers and on-call health assistants, families can receive expert assessments and treatment at home, reducing the need for frequent hospital visits.'
         ]
       },
       {
@@ -187,10 +187,10 @@ export const blogPosts: BlogPost[] = [
     ],
     closingTitle: 'Peace of Mind Through Connected Care',
     closingParagraphs: [
-      'Health isn’t just about treatment—it’s about confidence and control.',
+      'Health isn’t just about treatment - it’s about confidence and control.',
       'Knowing when to seek hospital care versus when to rely on home support gives families peace of mind and ensures health decisions remain informed, proactive, and precise.',
       'Concierge medicine empowers families to stay prepared, connected, and confident in every health situation.',
-      'Connect with a trusted care team that helps you make the right health decisions—anytime, anywhere.'
+      'Connect with a trusted care team that helps you make the right health decisions - anytime, anywhere.'
     ]
   },
   {
@@ -202,8 +202,8 @@ export const blogPosts: BlogPost[] = [
     date: '05 Oct 2025',
     readTime: '7 min read',
     intro: [
-      'Living with diabetes means staying mindful every day — but it doesn’t have to feel overwhelming. Managing diabetes at home can bring both comfort and control when supported with the right habits, tools, and care. With proper guidance and routine, keeping blood sugar levels in check becomes a natural part of a healthy, confident life.',
-      'Diabetes care extends far beyond checking glucose levels or taking medication. It’s about understanding how your lifestyle, diet, activity, and stress impact your body’s rhythm. Each person’s diabetes journey is unique, which makes individualized care — often available through concierge-style medical services — especially valuable.',
+      'Living with diabetes means staying mindful every day - but it doesn’t have to feel overwhelming. Managing diabetes at home can bring both comfort and control when supported with the right habits, tools, and care. With proper guidance and routine, keeping blood sugar levels in check becomes a natural part of a healthy, confident life.',
+      'Diabetes care extends far beyond checking glucose levels or taking medication. It’s about understanding how your lifestyle, diet, activity, and stress impact your body’s rhythm. Each person’s diabetes journey is unique, which makes individualized care - often available through concierge-style medical services - especially valuable.',
       'At its core, successful management involves monitoring, nutrition, physical activity, medication adherence, and emotional balance. But managing these elements at home requires structure and ongoing support.'
     ],
     sections: [
@@ -211,13 +211,13 @@ export const blogPosts: BlogPost[] = [
         heading: '1. Building a Routine Around Blood Sugar Monitoring',
         paragraphs: [
           'Consistent glucose monitoring is the foundation of home-based diabetes management. Digital glucose meters and CGM devices make it easier to track trends in real time.',
-          'Keeping a daily log — manually or through apps — helps identify patterns linked to meals, exercise, or stress. Concierge medical providers often review this data remotely, providing early adjustments to prevent fluctuations before they turn into complications.'
+          'Keeping a daily log - manually or through apps - helps identify patterns linked to meals, exercise, or stress. Concierge medical providers often review this data remotely, providing early adjustments to prevent fluctuations before they turn into complications.'
         ]
       },
       {
         heading: '2. Nutrition: Eating with Awareness, Not Restriction',
         paragraphs: [
-          'A balanced diet doesn’t mean giving up favorite foods — it means learning the right proportions and timing. Prioritize fiber-rich vegetables, whole grains, lean proteins, and healthy fats while moderating simple carbs.',
+          'A balanced diet doesn’t mean giving up favorite foods - it means learning the right proportions and timing. Prioritize fiber-rich vegetables, whole grains, lean proteins, and healthy fats while moderating simple carbs.',
           'Working with a nutritionist or a personalized care team ensures your meal plan fits your lifestyle. For busy families, having a dedicated care assistant who supports diet planning or home-chef coordination can be a game changer.',
           'It’s about empowerment through education, not restriction.'
         ]
@@ -226,14 +226,14 @@ export const blogPosts: BlogPost[] = [
         heading: '3. Staying Active and Mindful',
         paragraphs: [
           'Exercise is one of the most effective ways to regulate blood sugar naturally. Activities like walking, yoga, swimming, or light strength training enhance insulin sensitivity.',
-          'Overexertion or skipping meals can cause sugar dips — that’s why personalized activity guidance is essential. Concierge programs often pair clients with wellness coaches or physiotherapists for safe, sustainable routines.'
+          'Overexertion or skipping meals can cause sugar dips - that’s why personalized activity guidance is essential. Concierge programs often pair clients with wellness coaches or physiotherapists for safe, sustainable routines.'
         ]
       },
       {
         heading: '4. Medication and Regular Check-ins',
         paragraphs: [
           'Even with consistent home routines, medical oversight remains crucial. Concierge healthcare models simplify this with virtual consultations, medication reminders, and home lab sample collection for routine tests like HbA1c, cholesterol, and kidney function.',
-          'These proactive measures ensure small deviations are caught early — before they become serious concerns.'
+          'These proactive measures ensure small deviations are caught early - before they become serious concerns.'
         ]
       },
       {
@@ -247,13 +247,13 @@ export const blogPosts: BlogPost[] = [
         heading: 'The Role of Concierge Care in Diabetes Management',
         paragraphs: [
           'Concierge or home-based healthcare brings convenience and consistency to diabetes care. It transforms the traditional clinic visit into a continuous care experience supported by professionals who know your medical history, lifestyle, and preferences.',
-          'Whether it’s routine monitoring, at-home consultations, or coordinated specialist care, concierge models make preventive and chronic disease management more seamless. For individuals managing diabetes, this means fewer disruptions — and more time focusing on overall wellbeing.'
+          'Whether it’s routine monitoring, at-home consultations, or coordinated specialist care, concierge models make preventive and chronic disease management more seamless. For individuals managing diabetes, this means fewer disruptions - and more time focusing on overall wellbeing.'
         ]
       }
     ],
     closingTitle: 'Conclusion',
     closingParagraphs: [
-      'Managing diabetes at home isn’t just about discipline — it’s about designing a care system that adapts to your life. With personalized attention, structured monitoring, and compassionate support, individuals can live confidently without constantly worrying about fluctuating health.',
+      'Managing diabetes at home isn’t just about discipline - it’s about designing a care system that adapts to your life. With personalized attention, structured monitoring, and compassionate support, individuals can live confidently without constantly worrying about fluctuating health.',
       'Experience healthcare designed around you.',
       'Connect with a dedicated team that supports your wellness right from your home.'
     ]
@@ -268,13 +268,13 @@ export const blogPosts: BlogPost[] = [
     date: '05 Oct 2025',
     readTime: '7 min read',
     intro: [
-      'In today’s complex healthcare world, families often struggle with fragmented systems, long wait times, and a lack of personal connection. Concierge healthcare offers a better way — one built on continuity, accessibility, and personalized medical attention. For families who value trusted relationships and convenience, this approach redefines what quality care truly means.'
+      'In today’s complex healthcare world, families often struggle with fragmented systems, long wait times, and a lack of personal connection. Concierge healthcare offers a better way - one built on continuity, accessibility, and personalized medical attention. For families who value trusted relationships and convenience, this approach redefines what quality care truly means.'
     ],
     sections: [
       {
         heading: 'What Is Concierge in Healthcare?',
         paragraphs: [
-          'Concierge healthcare is a modern model that provides direct, continuous access to a dedicated care team — typically a Health Assistant and Family Physician — who manage all aspects of a family’s health within a coordinated system. Instead of navigating multiple hospitals and specialists who rarely communicate, families receive streamlined, preventive, and proactive care.'
+          'Concierge healthcare is a modern model that provides direct, continuous access to a dedicated care team - typically a Health Assistant and Family Physician - who manage all aspects of a family’s health within a coordinated system. Instead of navigating multiple hospitals and specialists who rarely communicate, families receive streamlined, preventive, and proactive care.'
         ]
       },
       {
@@ -291,13 +291,13 @@ export const blogPosts: BlogPost[] = [
       {
         heading: '1. Dedicated Care Team',
         paragraphs: [
-          'Every family is supported by a Health Assistant and Family Physician who coordinate appointments, maintain records, and monitor ongoing conditions — ensuring no health detail is overlooked.'
+          'Every family is supported by a Health Assistant and Family Physician who coordinate appointments, maintain records, and monitor ongoing conditions - ensuring no health detail is overlooked.'
         ]
       },
       {
         heading: '2. Preventive & Continuous Care',
         paragraphs: [
-          'From annual check-ups and nutrition guidance to lifestyle management and chronic care follow-ups, Proxycare focuses on prevention, not reaction — keeping families healthy through consistent attention.'
+          'From annual check-ups and nutrition guidance to lifestyle management and chronic care follow-ups, Proxycare focuses on prevention, not reaction - keeping families healthy through consistent attention.'
         ]
       },
       {
@@ -326,7 +326,7 @@ export const blogPosts: BlogPost[] = [
         heading: 'Why It Matters for Families',
         paragraphs: [
           'For families seeking trustworthy, proactive, and comprehensive care, Proxycare bridges the gap between traditional healthcare and true personalized service. Whether it\'s preventive wellness, chronic condition management, or rapid emergency support, Proxycare ensures peace of mind and consistency that’s hard to find elsewhere.',
-          'Choose healthcare that guides you all the way. Experience truly connected, compassionate, and continuous care — right from the comfort of your home.'
+          'Choose healthcare that guides you all the way. Experience truly connected, compassionate, and continuous care - right from the comfort of your home.'
         ]
       }
     ]

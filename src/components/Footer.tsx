@@ -10,10 +10,10 @@ type QuickLink =
 
 const quickLinks: QuickLink[] = [
   { label: 'How it works', sectionId: 'how-it-works' },
-  { label: 'What we do', sectionId: 'what-we-do' },
   { label: 'Our team', sectionId: 'our-team' },
+  { label: 'Our Journey', to: '/video', isRoute: true },
   { label: 'Blogs', to: '/blogs', isRoute: true },
-  { label: 'Contact us', to: '/contact', isRoute: true },
+  { label: 'Get Started', to: '/contact', isRoute: true },
 ];
 
 export const Footer = () => {
@@ -35,7 +35,7 @@ export const Footer = () => {
               <img src={Logo_Main} alt="Proxycare Logo" style={{ height: 64 }} />
             </Link>
           </div>
-          <p className="pc-footer-light-desc">Proxycare is an independent fiduciary health advisory service. We support families with physician-led oversight, proactive care planning, and discreet coordination - always in your best health interest.</p>
+          <p className="pc-footer-light-desc">With a simple subscription you get a dedicated Health Assistant, who is your first point of contact for any healthcare needs, day or night.</p>
         </div>
         <div>
           <div className="pc-footer-light-title">Quick Links</div>

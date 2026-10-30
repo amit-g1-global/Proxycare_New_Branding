@@ -12,32 +12,32 @@ import Hero_Image from '../assets/Hero_Image_2.png';
 // Features Bar
 import user_group from '../assets/user-group.svg';
 import shield_plus from '../assets/shield-plus.svg';
-import Fastrack from '../assets/Fastrack.svg';
-import hours_clock from '../assets/24-hours-clock.svg';
-// What we do
-import Organized_Icon from '../assets/Organized_Icon.svg';
-import Appointment from '../assets/Appointment.svg';
-import healtcare_Light from '../assets/healtcare_Light.svg';
+import records_top from '../assets/features_bar/records-top.svg';
+import records_middle from '../assets/features_bar/records-middle.svg';
+import records_bottom from '../assets/features_bar/records-bottom.svg';
+import records_tick from '../assets/features_bar/records-tick.svg';
+import feature_user from '../assets/features_bar/user.svg';
+import feature_heart_add from '../assets/features_bar/heart-add.svg';
+import feature_time from '../assets/features_bar/time-04.svg';
 import hospital from '../assets/hospital.svg';
-import Love from '../assets/Love.svg';
 
-// Steps
-import Records from '../assets/Records.svg';
-import Plan from '../assets/Plan.svg';
-import customer_service from '../assets/customer_service.svg';
+// Subscription (How it works)
+import sub_records from '../assets/subscription/records.svg';
+import sub_badge_check from '../assets/subscription/badge-check.svg';
+import sub_user from '../assets/subscription/user.svg';
+import sub_plan from '../assets/subscription/plan.svg';
+import sub_time from '../assets/subscription/time-04.svg';
 
-// Services
 import Digitized_Records from '../assets/Digitized_Records.svg';
-import Appointment_Co from '../assets/Appointment_Co.svg';
-import Digitize_Health from '../assets/Digitize_Health.svg';
-import Fastrack_Hospital from '../assets/Fastrack_Hospital.svg';
-import ambulance from '../assets/ambulance.svg';
 
 // Use Cases
-import health from '../assets/health.svg';
-import healtcare_svg from '../assets/healtcare.svg';
-import door from '../assets/door.svg';
-import Stack from '../assets/Stack.svg';
+import uc_files from '../assets/use_cases/files-02.svg';
+import uc_health from '../assets/use_cases/health.svg';
+import uc_door from '../assets/use_cases/door.svg';
+import uc_give_blood from '../assets/use_cases/give-blood.svg';
+
+// Subscription CTA
+import cta_arrow from '../assets/cta/arrow-left-02.svg';
 
 // Other
 import StarIcon from '../assets/Star.svg';
@@ -45,6 +45,7 @@ import Plus_Icon from '../assets/Plus_Icon.svg';
 import Minus_Icon from '../assets/Minus_Icon.svg';
 import Ifen from '../assets/Ifen.svg';
 import Parvez_Image from '../assets/Parvez.jpg';
+import Jagat_Image from '../assets/Jagat.png';
 
 /* ── Hero ── */
 const Hero = () => {
@@ -67,13 +68,10 @@ const Hero = () => {
         <div className="pc-hero-inner">
           <div className="pc-hero-left">
             <h1 className="pc-hero-h1">
-              Meet your personal<br className="pc-br-desktop" /> health manager
-              <span style={{ display: 'block', fontSize: '0.55em', color: '#1147a8', marginTop: '16px', fontWeight: 600, fontFamily: '"Inter", sans-serif', letterSpacing: '1px', textTransform: 'uppercase' }}>
-                AI Enabled <span style={{ color: '#c8d7ee', margin: '0 8px' }}>|</span> Human controlled
-              </span>
+              Your Personalised<br className="pc-br-desktop" /> <span className="pc-hero-nowrap">Healthcare Coordination</span><br className="pc-br-desktop" /> Platform
             </h1>
             <p className="pc-hero-desc">
-              Proxycare acts as your dedicated healthcare proxy - organizing your medical records, coordinating your doctors and hospitals, and ensuring nothing falls through the cracks. So you can focus on care, not logistics.
+              With a simple subscription you get a dedicated Health Assistant, who is your first point of contact for any healthcare needs, day or night.
             </p>
             <div className="pc-hero-actions">
               <Link to="/contact" className="pc-btn-primary" style={{ textDecoration: 'none' }}>
@@ -148,10 +146,21 @@ const Hero = () => {
       <div style={{ padding: '0 24px 24px', position: 'relative', zIndex: 2 }}>
         <div className="pc-features-bar">
           {[
-            { icon: <img src={user_group} alt="" style={{ width: 30, height: 30 }} />, title: 'Digitize', sub: 'All your records' },
-            { icon: <img src={shield_plus} alt="" style={{ width: 28, height: 28 }} />, title: 'Dedicated', sub: 'Health assistant' },
-            { icon: <img src={Fastrack} alt="" style={{ width: 28, height: 28 }} />, title: 'FastTrack', sub: 'At network hospitals' },
-            { icon: <img src={hours_clock} alt="" style={{ width: 28, height: 28 }} />, title: '24/7', sub: 'Emergency support' },
+            {
+              icon: (
+                <span className="pc-records-icon">
+                  <span className="pc-records-layer pc-records-top"><img src={records_top} alt="" /></span>
+                  <span className="pc-records-layer pc-records-middle"><img src={records_middle} alt="" /></span>
+                  <span className="pc-records-layer pc-records-bottom"><img src={records_bottom} alt="" /></span>
+                  <span className="pc-records-tick"><span className="pc-records-tick-mark"><img src={records_tick} alt="" /></span></span>
+                </span>
+              ),
+              title: 'Fully Digitized',
+              sub: 'Medical Records',
+            },
+            { icon: <img src={feature_user} alt="" style={{ width: 32, height: 32 }} />, title: 'Dedicated', sub: 'Health Assistant' },
+            { icon: <img src={feature_heart_add} alt="" style={{ width: 32, height: 32 }} />, title: 'Personalised', sub: 'Health Plan' },
+            { icon: <img src={feature_time} alt="" style={{ width: 32, height: 32 }} />, title: 'Emergency', sub: 'Care Plan' },
           ].map((f, i) => (
             <React.Fragment key={f.title}>
               <div className="pc-feature-item">
@@ -170,133 +179,73 @@ const Hero = () => {
   );
 };
 
-/* ── Comparison / What We Do ── */
-const WhatWeDo = () => (
-  <section id="what-we-do" style={{ background: '#faf6f0', padding: '20px 0 80px' }}>
-    <div className="pc-container" style={{ position: 'relative' }}>
+/* ── Subscription (How it works) ── */
+const subscriptionCards = [
+  {
+    icon: <img src={sub_records} alt="" width={60} height={60} />,
+    badge: 'small',
+    title: 'Fully Digitized Medical Records',
+    intro: 'We collect your medical history, digitize your reports, prescriptions, and vital signs, and organise them into a clear medical summary. Your records are regularly updated to keep your health information current. It is accessible to you and your doctors with just one click.',
+    points: ['Medical history collection', 'Reports digitized in EMR', 'Medical summary created'],
+  },
+  {
+    icon: <img src={sub_user} alt="" width={64} height={64} />,
+    title: 'Dedicated Health Assistant',
+    intro: 'Your dedicated Health Assistant keeps every aspect of your healthcare connected and organised, including:',
+    points: ['Doctor appointments and follow-ups', 'Hospital, diagnostic, and pharmacy coordination', 'Digitised health records and medical summaries', 'Physiotherapy and wellness support'],
+  },
+  {
+    icon: <img src={sub_plan} alt="" width={64} height={64} />,
+    badge: 'large',
+    title: 'Personalised Health Plan',
+    intro: 'Our preventive care experts will work with you to create a personalised health plan tailored to your needs and health goals, including:',
+    points: ['Identifying and managing potential health risks', 'A health plan tailored to your personal goals', 'Preventive screenings and follow-ups', 'A health calendar to track upcoming appointments and ensure nothing is missed'],
+  },
+  {
+    icon: <img src={sub_time} alt="" width={64} height={64} />,
+    title: 'Emergency Care Plan',
+    intro: 'Our expert team creates a personalised emergency plan for you and your loved ones, including:',
+    points: ['Pre-identified hospitals and ambulance services', 'Emergency access to your family physician', 'Medical summary shared before arrival', 'Priority support for admission, billing, and insurance coordination'],
+  },
+] as const;
 
-      {/* Decorative dot grid at top right behind the card */}
-      <div className="pc-comparison-dots">
-        {Array.from({ length: 36 }).map((_, i) => <div key={i} className="pc-comparison-dot" />)}
-      </div>
-
-      <div className="pc-comparison-card">
-        <div className="pc-comparison-inner">
-          <div className="pc-comparison-left">
-            <div className="pc-comparison-label">WHAT WE DO</div>
-            <div className="pc-comparison-label-line" />
-            <h2 className="pc-comparison-h2">
-              We handle<br className="pc-br-desktop" /> coordination.<br className="pc-br-desktop" /> <span className="pc-comparison-h2-blue">Your doctors<br className="pc-br-desktop" /> handle care.</span>
-            </h2>
-          </div>
-
-          <div className="pc-comparison-right">
-            {[
-              { icon: <img src={Organized_Icon} alt="" style={{ width: 24, height: 24 }} />, text: 'Organize and digitize your complete medical records' },
-              { icon: <img src={Appointment} alt="" style={{ width: 24, height: 24 }} />, text: 'Coordinate appointments, tests, and follow-ups' },
-              { icon: <img src={healtcare_Light} alt="" style={{ width: 24, height: 24 }} />, text: 'Build a personalized care and emergency plan' },
-              { icon: <img src={hospital} alt="" style={{ width: 24, height: 24 }} />, text: 'FastTrack access at partner hospitals' },
-              { icon: <img src={Love} alt="" style={{ width: 24, height: 24 }} />, text: 'Dedicated health assistant for your family' },
-            ].map((item, i) => (
-              <div key={i} className="pc-feature-row">
-                <div className="pc-feature-row-icon">{item.icon}</div>
-                <div className="pc-feature-row-text">{item.text}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="pc-comparison-disclaimer">
-          We work <span style={{ color: '#b9d5ff', fontWeight: 600 }}>alongside</span> your existing doctors - <span style={{ color: '#b9d5ff', fontWeight: 600 }}>not</span> replace them.
-        </div>
-      </div>
-    </div>
-  </section>
-);
-
-/* ── Steps ── */
 const Steps = () => (
-  <section id="how-it-works" style={{ background: '#faf6f0', padding: '20px 0 80px' }}>
+  <section id="how-it-works" className="pc-sub-section">
     <div className="pc-container">
       <FadeIn>
-        <div style={{ textAlign: 'center', marginBottom: 12 }}>
-          <span className="pc-pill">HOW IT WORKS</span>
+        <div className="pc-sub-head">
+          <h2 className="pc-sub-h2">
+            <span className="pc-sub-h2-dark">One Subscription</span>
+            <span className="pc-sub-h2-blue">All Your Healthcare Needs, Co-ordinated</span>
+          </h2>
+          <div className="pc-sub-dots" aria-hidden="true">
+            {Array.from({ length: 36 }).map((_, i) => <span key={i} />)}
+          </div>
         </div>
-        <h2 className="pc-h2" style={{ textAlign: 'center', marginTop: 16 }}>Three steps to <span style={{ color: '#1147a8' }}>stress-free healthcare</span></h2>
-        <p className="pc-sub" style={{ textAlign: 'center', marginTop: 12 }}>
-          We become your healthcare proxy from day one - here's exactly what that looks like.
-        </p>
       </FadeIn>
 
-      <div className="pc-steps-grid" style={{ marginTop: 48 }}>
-        {/* connector placeholders are inside the grid via absolute overlay */}
-        {[
-          {
-            num: '01', icon: <img src={Records} alt="" style={{ width: 56, height: 56 }} />,
-            title: 'Digitized Medical Records',
-            desc: 'We collect complete medical history of patients, digitise all the reports, and create a clear health summary ready for any doctor visit or emergency.',
-            tags: ['Medical history collection', 'Key vitals recorded', 'Reports digitised in EMR'],
-          },
-          {
-            num: '02', icon: <img src={Plan} alt="" style={{ width: 56, height: 56 }} />,
-            title: 'Personalised Health Planning',
-            desc: 'We build a personalised care plan for patients so the screenings, check-ups, and health goals never get missed.',
-            tags: ['Recommended screenings', 'Emergency care plan', 'Personalised health plan'],
-          },
-          {
-            num: '03', icon: <img src={customer_service} alt="" style={{ width: 56, height: 56 }} />,
-            title: 'Ongoing support',
-            desc: 'Dedicated Health Assistant coordinates everything from routine visits to specialist connections, so nothing falls through the cracks.',
-            tags: ['Doctor visit coordination', 'Hospital follow-ups', 'Billing and insurance coordination'],
-          },
-        ].map((s, i) => (
-          <FadeIn key={s.num} className="pc-step-card" delay={i * 150}>
-            <div className="pc-step-num">{s.num}</div>
-            <div className="pc-step-icon-bg">{s.icon}</div>
-            <div className="pc-step-title">{s.title}</div>
-            <div className="pc-step-desc">{s.desc}</div>
-            <div className="pc-step-tags">
-              {s.tags.map(t => <span key={t} className="pc-tag">{t}</span>)}
+      <div className="pc-sub-grid">
+        {subscriptionCards.map((c, i) => (
+          <FadeIn key={c.title} className="pc-sub-card" delay={i * 100}>
+            <div className="pc-sub-card-head">
+              <div className="pc-sub-icon-bg">
+                <div className="pc-sub-icon">
+                  {c.icon}
+                  {'badge' in c && (
+                    <span className={`pc-sub-badge pc-sub-badge-${c.badge}`}>
+                      <img src={sub_badge_check} alt="" width={16} height={16} />
+                    </span>
+                  )}
+                </div>
+              </div>
+              <h3 className="pc-sub-card-title">{c.title}</h3>
             </div>
-          </FadeIn>
-        ))}
-
-        {/* Step Connectors */}
-        <div className="pc-step-connector pc-conn-1">
-          <svg className="lucide lucide-chevron-right" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
-        </div>
-        <div className="pc-step-connector pc-conn-2">
-          <svg className="lucide lucide-chevron-right" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
-        </div>
-      </div>
-    </div>
-  </section>
-);
-
-/* ── Services ── */
-const Services = () => (
-  <section style={{ background: '#faf6f0', padding: '20px 0 80px' }}>
-    <div className="pc-container">
-      <FadeIn>
-        <div style={{ textAlign: 'center' }}>
-          <span className="pc-pill">OUR SERVICES</span>
-          <h2 className="pc-h2" style={{ marginTop: 16 }}>Everything your family's <span style={{ color: '#1147a8' }}>health needs</span></h2>
-          <p className="pc-sub" style={{ marginTop: 12 }}>From routine care to emergencies - we coordinate it all on your behalf.</p>
-        </div>
-      </FadeIn>
-      <div className="pc-services-grid">
-        {[
-          { icon: <img src={Digitized_Records} alt="" style={{ width: 32, height: 32 }} />, title: 'Digitized medical records', desc: 'All reports in one secure place - with a personalized health plan and medical summary, accessible through a simple app whenever you need them.' },
-          { icon: <img src={Appointment_Co} alt="" style={{ width: 32, height: 32 }} />, title: 'Appointment coordination', desc: 'Scheduled, tracked, and followed through - no delays, no missed check-ups.' },
-          { icon: <img src={Digitize_Health} alt="" style={{ width: 32, height: 32 }} />, title: 'Dedicated health assistant', desc: 'One person who knows your family\'s health and manages all coordination on your behalf.' },
-          { icon: <img src={Fastrack_Hospital} alt="" style={{ width: 32, height: 32 }} />, title: 'FastTrack Access', desc: 'Priority access at partner hospitals. Faster appointments, shorter waits, smoother discharge.' },
-          { icon: <img src={ambulance} alt="" style={{ width: 32, height: 32 }} />, title: 'Emergency support', desc: 'Updated records and an emergency plan ready - so your family is never caught off guard.' },
-          { icon: <img src={customer_service} alt="" style={{ width: 32, height: 32 }} />, title: 'Specialist connect', desc: 'Connections to nutritionists, physiotherapists, and specialists coordinated as needed.' },
-        ].map((c, i) => (
-          <FadeIn key={c.title} className="pc-service-card" delay={i * 100}>
-            <div className="pc-service-icon">{c.icon}</div>
-            <div className="pc-service-title">{c.title}</div>
-            <div className="pc-service-divider" />
-            <div className="pc-service-desc">{c.desc}</div>
+            <div className="pc-sub-card-body">
+              <p>{c.intro}</p>
+              <ul>
+                {c.points.map(p => <li key={p}>{p}</li>)}
+              </ul>
+            </div>
           </FadeIn>
         ))}
       </div>
@@ -306,31 +255,34 @@ const Services = () => (
 
 /* ── Use Cases ── */
 const UseCases = () => (
-  <section style={{ background: '#faf6f0', padding: '20px 0 80px' }}>
-    <div className="pc-container-sm">
-      <FadeIn>
-        <div style={{ textAlign: 'center' }}>
-          <span className="pc-pill">WHEN PROXYCARE HELPS</span>
-          <h2 className="pc-h2" style={{ marginTop: 16 }}>Does this sound <span style={{ color: '#1147a8' }}>like you?</span></h2>
-          <p className="pc-sub" style={{ marginTop: 12 }}>Proxycare is especially useful in these situations.</p>
-        </div>
-      </FadeIn>
-      <div className="pc-use-cases-grid">
-        {[
-          { icon: <img src={health} alt="" style={{ width: 40, height: 40 }} />, title: "You're too busy to manage healthcare", desc: "Work, family, life - healthcare coordination keeps slipping. We take that off your plate entirely." },
-          { icon: <img src={healtcare_svg} alt="" style={{ width: 40, height: 40 }} />, title: "Your parents need regular care", desc: "Whether they're nearby or far away, we ensure consistent, coordinated care for them." },
-          { icon: <img src={door} alt="" style={{ width: 40, height: 40 }} />, title: "You live away from your family", desc: "We're your on-ground coordinator so distance doesn't mean your family goes without support." },
-          { icon: <img src={Stack} alt="" style={{ width: 40, height: 40 }} />, title: "You just want it organized", desc: "Records, plans, providers - all in one structured place. Peace of mind for the whole family." },
-        ].map((c, i) => (
-          <FadeIn key={c.title} className="pc-use-case-card" delay={i * 150}>
-            <div className="pc-use-case-icon">{c.icon}</div>
-            <div>
-              <div className="pc-use-case-title">{c.title}</div>
-              <div className="pc-use-case-line" />
-              <div className="pc-use-case-desc">{c.desc}</div>
+  <section className="pc-uc-section">
+    <div className="pc-container">
+      <div className="pc-uc-inner">
+        <FadeIn>
+          <div className="pc-sub-head">
+            <h2 className="pc-uc-h2">Does this sound like you?</h2>
+            <div className="pc-sub-dots" aria-hidden="true">
+              {Array.from({ length: 36 }).map((_, i) => <span key={i} />)}
             </div>
-          </FadeIn>
-        ))}
+          </div>
+        </FadeIn>
+        <div className="pc-use-cases-grid">
+          {[
+            { icon: uc_files, title: 'Your medical records are scattered', desc: 'Reports and prescriptions are spread across providers. We bring them together into one organised medical summary.' },
+            { icon: uc_health, title: 'You want to stay ahead of your health', desc: 'We help you plan preventive screenings, and stay on track with follow-ups.' },
+            { icon: uc_door, title: "You're not prepared for a medical emergency", desc: 'We help organise essential medical information and emergency contacts into an Emergency Care Plan.' },
+            { icon: uc_give_blood, title: 'Your parents need care from a distance', desc: "We coordinate appointments, reports, and follow-ups to help keep your parents healthcare connected." },
+          ].map((c, i) => (
+            <FadeIn key={c.title} className="pc-use-case-card" delay={i * 150}>
+              <div className="pc-use-case-icon"><img src={c.icon} alt="" width={48} height={48} /></div>
+              <div className="pc-use-case-text">
+                <h3 className="pc-use-case-title">{c.title}</h3>
+                <div className="pc-use-case-line" />
+                <p className="pc-use-case-desc">{c.desc}</p>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
       </div>
     </div>
   </section>
@@ -341,27 +293,15 @@ const SubscriptionCTA = () => (
   <section style={{ background: '#faf6f0', padding: '0 0 80px' }}>
     <div className="pc-container" style={{ padding: '0 24px' }}>
       <FadeIn>
-        <div style={{
-          background: 'linear-gradient(to right, #0d2137, #1147a8)',
-          borderRadius: 32,
-          padding: '56px 40px',
-          color: '#fff',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          textAlign: 'center',
-          gap: 20
-        }}>
-          <h2 style={{ fontSize: 36, fontWeight: 600, margin: 0, fontFamily: '"Playfair Display", serif' }}>
-            Does this feel like you?
-          </h2>
-          <p style={{ fontSize: 18, lineHeight: 1.6, maxWidth: 760, margin: 0, opacity: 0.9 }}>
-            Get the support, structure, and ongoing care coordination your family needs all through one subscription.
-            <br /><br />
-            Reach out to learn about our subscription plans and find the right fit for your family.
-          </p>
-          <Link to="/contact" className="pc-btn-primary" style={{ background: '#fff', color: '#0d2137', marginTop: 16 }}>
-            CONTACT US
+        <div className="pc-cta-card">
+          <div className="pc-cta-label">
+            <span>Get in touch</span>
+            <i className="pc-cta-label-line" />
+          </div>
+          <h2 className="pc-cta-h2">Our team will be happy to assist you and your family</h2>
+          <Link to="/contact" className="pc-cta-btn">
+            Get Started
+            <img src={cta_arrow} alt="" width={28} height={28} className="pc-cta-btn-arrow" />
           </Link>
         </div>
       </FadeIn>
@@ -383,7 +323,7 @@ const Team = () => (
       <div className="pc-team-grid">
         {[
           { photo: Parvez_Image, initials: 'PM', name: 'Parvez Mansuri', role: 'Co-Founder', bio: 'Three decades of global technology and operations leadership. Co-founded Proxycare on the belief that healthcare should be personal, seamless, and human.' },
-          { photo: undefined, initials: 'JP', name: 'Dr. Jagat Patel', role: 'Co-Founder', bio: 'Physician with years of clinical experience and a passion for patient advocacy. Co-founded Proxycare to bring compassionate, coordinated care to every family.' },
+          { photo: Jagat_Image, initials: 'JP', name: 'Dr. Jagat Patel', role: 'Co-Founder', bio: 'Physician with years of clinical experience and a passion for patient advocacy. Co-founded Proxycare to bring compassionate, coordinated care to every family.' },
         ].map((m, i) => (
           <FadeIn key={m.name} className="pc-team-card" delay={i * 200}>
             {m.photo ? (
@@ -407,12 +347,12 @@ const Testimonials = () => {
   const testimonials = [
     {
       quote: '"I stopped worrying about my parents\' health from Bangalore."',
-      body: 'Proxycare handles everything I used to stress over — doctor visits, follow-ups, medications. It\'s like having a trusted person on the ground for my parents.',
+      body: 'Proxycare handles everything I used to stress over - doctor visits, follow-ups, medications. It\'s like having a trusted person on the ground for my parents.',
       author: 'Rahul S.', role: 'IT PROFESSIONAL, Ahmedabad', initial: 'R',
     },
     {
       quote: '"FastTrack made my father\'s hospital visit completely different."',
-      body: 'We used to spend hours for a 20-minute consultation. With FastTrack, everything was arranged — registration, tests, even discharge. A completely different experience.',
+      body: 'We used to spend hours for a 20-minute consultation. With FastTrack, everything was arranged - registration, tests, even discharge. A completely different experience.',
       author: 'Meena K.', role: 'BUSINESS OWNER, Mumbai', initial: 'M',
     },
     {
@@ -479,7 +419,7 @@ const Testimonials = () => {
 const faqs = [
   {
     q: 'What exactly is Proxycare?',
-    a: 'Proxycare is an independent healthcare coordination service. We act as your proxy — handling the logistics of healthcare on your behalf. We organize your medical records, coordinate appointments and follow-ups, and support you during hospital visits and emergencies — so you don\'t have to manage it all alone.'
+    a: 'Proxycare is an independent healthcare coordination service. We act as your proxy - handling the logistics of healthcare on your behalf. We organize your medical records, coordinate appointments and follow-ups, and support you during hospital visits and emergencies - so you don\'t have to manage it all alone.'
   },
   {
     q: 'Who is a dedicated health assistant?',
@@ -565,9 +505,7 @@ export default function HomePage() {
     <div style={{ minHeight: '100vh' }}>
       <Navbar />
       <Hero />
-      <WhatWeDo />
       <Steps />
-      <Services />
       <UseCases />
       <SubscriptionCTA />
       <Team />

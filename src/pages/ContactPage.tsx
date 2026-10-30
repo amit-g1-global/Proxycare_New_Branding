@@ -1,20 +1,23 @@
 import React, { useState } from 'react';
-import { ChevronDown, AlertCircle, CheckCircle2, Loader2 } from 'lucide-react';
+import { AlertCircle, CheckCircle2, Loader2 } from 'lucide-react';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 
-import ContactRightFrame from '../assets/Contact_Right_Frame.png';
-import LocationIcon from '../assets/Location_Icon_Contact.svg';
-import CallIcon from '../assets/Call_Icon_Contact.svg';
-import MailIcon from '../assets/Mail_Icon_Contact.svg';
-import WebIcon from '../assets/Web_Icon_Contact.svg';
+import { PROXYCARE_WHATSAPP_URL } from '../constants/externalLinks';
+import WhatsAppButtonIcon from '../assets/contact/whatsapp-button.svg';
+import WhatsAppQrLogo from '../assets/contact/whatsapp-qr-logo.svg';
+import CardGradientShape from '../assets/contact/card-gradient-shape.svg';
+
+// The WhatsApp QR image is added as src/assets/contact/whatsapp-qr.(png|jpg|svg); until then the tile shows only the WhatsApp logo.
+const whatsAppQr = Object.values(
+  import.meta.glob<string>('../assets/contact/whatsapp-qr.{png,jpg,jpeg,svg,webp}', { eager: true, import: 'default' })
+)[0];
 
 export default function ContactPage() {
   const [form, setForm] = useState({
     name: '',
     mail: '',
     phone: '',
-    location: '',
     message: '',
   });
 
@@ -24,7 +27,6 @@ export default function ContactPage() {
     type: 'warning',
   });
   const [isSending, setIsSending] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const formatPhoneNumber = (val: string) => {
     // Keep only numbers
@@ -92,10 +94,6 @@ export default function ContactPage() {
       showNotification('Phone number is a mandatory field.', 'warning');
       return;
     }
-    if (!form.location) {
-      showNotification('Location selection is a mandatory field.', 'warning');
-      return;
-    }
     if (!form.message.trim()) {
       showNotification('Message is a mandatory field.', 'warning');
       return;
@@ -136,7 +134,6 @@ export default function ContactPage() {
           Name: form.name.trim(),
           Email: form.mail.trim(),
           Phone: form.phone.trim(),
-          Location: form.location,
           Message: form.message.trim(),
           'Time (IST)': new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
         }),
@@ -145,7 +142,7 @@ export default function ContactPage() {
       const result = await response.json();
       if (response.ok && (result.success === 'true' || result.success === true || result.success)) {
         showNotification('Your details submitted successfully.', 'success');
-        setForm({ name: '', mail: '', phone: '', location: '', message: '' });
+        setForm({ name: '', mail: '', phone: '', message: '' });
       } else {
         showNotification(result.message || 'Failed to submit details.', 'warning');
       }
@@ -161,210 +158,93 @@ export default function ContactPage() {
     <div style={{ minHeight: '100vh', background: '#faf6f0' }}>
       <Navbar />
 
-      <main className="pc-contact-page">
-        {/* Page heading */}
-        <div className="pc-contact-heading">
-          <h1 className="pc-contact-title">Contact us</h1>
-        </div>
+      <main className="pc-ct-page">
+        <h1 className="pc-ct-title">Ready to start your journey with ProxyCare?</h1>
 
-        {/* Main contact card */}
-        <div className="pc-contact-card">
-
-          {/* ── Left: Office Info Panel ── */}
-          <div className="pc-contact-info-panel">
-            {/* Background image overlay */}
-            <img src={ContactRightFrame} alt="" className="pc-contact-panel-bg" />
-
-            <div className="pc-contact-info-content">
-              <h2 className="pc-contact-office-title">Our Office</h2>
-
-              <div className="pc-contact-info-rows">
-                {/* Address */}
-                <div className="pc-contact-info-row">
-                  <div className="pc-contact-icon-circle">
-                    <img src={LocationIcon} alt="Location" />
-                  </div>
-                  <a
-                    href="https://maps.google.com/?q=AWFIS,+2nd+Floor+ICP+800,+Rd+Number+36,+near+metro+pillar+no.+C1669,+CBI+Colony,+Jubilee+Hills,+Hyderabad,+Telangana+500033"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    AWFIS, 2nd Floor ICP 800, Rd Number 36, near metro pillar
-                    no. C1669, CBI Colony, Jubilee Hills, Hyderabad, Telangana
-                    500033
-                  </a>
-                </div>
-
-                {/* Phone */}
-                <div className="pc-contact-info-row">
-                  <div className="pc-contact-icon-circle">
-                    <img src={CallIcon} alt="Call" />
-                  </div>
-                  <a href="tel:+919182361266">+91 91823 61266</a>
-                </div>
-
-                {/* Email */}
-                <div className="pc-contact-info-row">
-                  <div className="pc-contact-icon-circle">
-                    <img src={MailIcon} alt="Mail" />
-                  </div>
-                  <a href="mailto:sales@proxy.care">sales@proxy.care</a>
-                </div>
-
-                {/* Website */}
-                <div className="pc-contact-info-row">
-                  <div className="pc-contact-icon-circle">
-                    <img src={WebIcon} alt="Website" />
-                  </div>
-                  <a href="https://www.proxy.care" target="_blank" rel="noopener noreferrer">www.proxy.care</a>
-                </div>
+        <form className="pc-ct-card" onSubmit={handleSubmit} noValidate>
+          <div className="pc-ct-top">
+            <div className="pc-ct-fields">
+              <div className="pc-ct-field">
+                <label className="pc-ct-label" htmlFor="contact-name">Name</label>
+                <input
+                  id="contact-name"
+                  type="text"
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  className="pc-ct-input"
+                  autoComplete="name"
+                />
               </div>
+              <div className="pc-ct-field">
+                <label className="pc-ct-label" htmlFor="contact-mail">Mail</label>
+                <input
+                  id="contact-mail"
+                  type="email"
+                  name="mail"
+                  value={form.mail}
+                  onChange={handleChange}
+                  className="pc-ct-input"
+                  autoComplete="email"
+                />
+              </div>
+              <div className="pc-ct-field">
+                <label className="pc-ct-label" htmlFor="contact-phone">Phone</label>
+                <input
+                  id="contact-phone"
+                  type="tel"
+                  name="phone"
+                  value={form.phone}
+                  onChange={handleChange}
+                  className="pc-ct-input"
+                  autoComplete="tel"
+                />
+              </div>
+            </div>
+
+            <div className="pc-ct-wa-card">
+              <img src={CardGradientShape} alt="" className="pc-ct-wa-shape" width={539} height={560} />
+              <div className="pc-ct-wa-message">
+                <p className="pc-ct-wa-title">Prefer WhatsApp?</p>
+                <a href={PROXYCARE_WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="pc-ct-wa-btn">
+                  <img src={WhatsAppButtonIcon} alt="" width={28} height={28} />
+                  Chat on WhatsApp
+                </a>
+              </div>
+              <div className="pc-ct-wa-or" aria-hidden="true">
+                <span className="pc-ct-wa-or-line" />
+                <span className="pc-ct-wa-or-badge">or</span>
+                <span className="pc-ct-wa-or-line" />
+              </div>
+              <a href={PROXYCARE_WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="pc-ct-wa-qr" aria-label="Chat with our team on WhatsApp">
+                <span className="pc-ct-wa-qr-tile">
+                  {whatsAppQr && <img src={whatsAppQr} alt="WhatsApp QR code" className="pc-ct-wa-qr-img" width={150} height={150} />}
+                  <img src={WhatsAppQrLogo} alt="" className="pc-ct-wa-qr-logo" width={42} height={42} />
+                </span>
+                <span className="pc-ct-wa-qr-caption">Scan to chat with our team</span>
+              </a>
             </div>
           </div>
 
-          {/* ── Right: Contact Form ── */}
-          <div className="pc-contact-form-panel">
-            <p className="pc-contact-form-subtitle">
-              Drop your details here and we'll contact you shortly.
-            </p>
-
-            <form className="pc-contact-form" onSubmit={handleSubmit}>
-              <div className="pc-contact-form-fields">
-                {/* Row 1: Name + Mail */}
-                <div className="pc-contact-form-row">
-                  <div className="pc-contact-field">
-                    <label className="pc-contact-label" htmlFor="contact-name">
-                      Name
-                    </label>
-                    <input
-                      id="contact-name"
-                      type="text"
-                      name="name"
-                      value={form.name}
-                      onChange={handleChange}
-                      className="pc-contact-input"
-                      autoComplete="name"
-                      placeholder="Enter your name"
-                    />
-                  </div>
-                  <div className="pc-contact-field">
-                    <label className="pc-contact-label" htmlFor="contact-mail">
-                      Mail
-                    </label>
-                    <input
-                      id="contact-mail"
-                      type="email"
-                      name="mail"
-                      value={form.mail}
-                      onChange={handleChange}
-                      className="pc-contact-input"
-                      autoComplete="email"
-                      placeholder="Enter your email"
-                    />
-                  </div>
-                </div>
-
-                {/* Row 2: Phone + Location */}
-                <div className="pc-contact-form-row">
-                  <div className="pc-contact-field">
-                    <label
-                      className="pc-contact-label"
-                      htmlFor="contact-phone"
-                    >
-                      Phone
-                    </label>
-                    <input
-                      id="contact-phone"
-                      type="tel"
-                      name="phone"
-                      value={form.phone}
-                      onChange={handleChange}
-                      className="pc-contact-input"
-                      autoComplete="tel"
-                      placeholder="Enter your phone number"
-                    />
-                  </div>
-                  <div className="pc-contact-field">
-                    <label
-                      className="pc-contact-label"
-                      htmlFor="contact-location"
-                    >
-                      Location
-                    </label>
-                    <div
-                      className="pc-custom-select-container"
-                      tabIndex={0}
-                      onBlur={() => setTimeout(() => setDropdownOpen(false), 200)}
-                    >
-                      <div
-                        className={`pc-custom-select-trigger ${form.location ? 'selected' : ''}`}
-                        onClick={() => setDropdownOpen(!dropdownOpen)}
-                      >
-                        <span>{form.location || 'Select your location'}</span>
-                        <ChevronDown size={18} className={`pc-select-chevron ${dropdownOpen ? 'open' : ''}`} />
-                      </div>
-                      {dropdownOpen && (
-                        <div className="pc-custom-select-options">
-                          <div
-                            className="pc-custom-select-option"
-                            onClick={() => {
-                              setForm(prev => ({ ...prev, location: 'Hyderabad' }));
-                              setDropdownOpen(false);
-                            }}
-                          >
-                            Hyderabad
-                          </div>
-                          <div
-                            className="pc-custom-select-option"
-                            onClick={() => {
-                              setForm(prev => ({ ...prev, location: 'Ahmedabad' }));
-                              setDropdownOpen(false);
-                            }}
-                          >
-                            Ahmedabad
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Message */}
-                <div className="pc-contact-field" style={{ width: '100%' }}>
-                  <label
-                    className="pc-contact-label"
-                    htmlFor="contact-message"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="contact-message"
-                    name="message"
-                    value={form.message}
-                    onChange={handleChange}
-                    className="pc-contact-input"
-                    placeholder="Write your message..."
-                    rows={4}
-                    style={{ resize: 'none', minHeight: '100px', paddingTop: '8px' }}
-                  />
-                </div>
-              </div>
-
-              {/* Submit row */}
-              <div className="pc-contact-submit-row">
-                <button
-                  type="submit"
-                  className="pc-contact-submit"
-                  disabled={isSending}
-                  style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
-                >
-                  {isSending && <Loader2 size={18} className="pc-spin" />}
-                  {isSending ? 'Sending...' : 'Send Message'}
-                </button>
-              </div>
-            </form>
+          <div className="pc-ct-bottom">
+            <div className="pc-ct-note">
+              <label className="pc-ct-label" htmlFor="contact-message">Leave us a note</label>
+              <textarea
+                id="contact-message"
+                name="message"
+                value={form.message}
+                onChange={handleChange}
+                className="pc-ct-input pc-ct-textarea"
+                placeholder="Tell us how we can help you"
+                rows={1}
+              />
+            </div>
+            <button type="submit" className="pc-ct-submit" disabled={isSending}>
+              {isSending && <Loader2 size={18} className="pc-spin" />}
+              {isSending ? 'Sending...' : 'Submit'}
+            </button>
           </div>
-        </div>
+        </form>
       </main>
 
       {/* Top toast notification */}

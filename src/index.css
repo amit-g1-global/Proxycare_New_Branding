@@ -76,6 +76,10 @@
   display: flex;
   align-items: center;
   gap: 32px;
+  /* centred on the bar itself, independent of the logo and button widths */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .pc-nav-links a {
@@ -285,6 +289,33 @@ a.pc-btn-login {
   background: #1147a8;
 }
 
+.pc-nav-actions {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.pc-btn-nav-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background: #fff;
+  color: #0d2137;
+  border: 1.5px solid #0d2137;
+  border-radius: 10px;
+  padding: 0 26px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.pc-btn-nav-outline:hover {
+  color: #1147a8;
+  border-color: #1147a8;
+}
+
 /* ── Hero ── */
 .pc-hero {
   min-height: 100vh;
@@ -391,7 +422,8 @@ a.pc-btn-login {
 }
 
 .pc-hero-left {
-  flex: 0 0 650px;
+  /* wide enough for "Healthcare Coordination" (680px at 60px) on one line */
+  flex: 0 0 690px;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -403,6 +435,12 @@ a.pc-btn-login {
   font-weight: 600;
   line-height: 1.2;
   color: #1b4784;
+}
+
+@media (min-width: 1025px) {
+  .pc-hero-nowrap {
+    white-space: nowrap;
+  }
 }
 
 .pc-hero-desc {
@@ -584,6 +622,58 @@ a.pc-btn-login {
   color: #fff;
 }
 
+/* "Fully Digitized" icon: four Figma layers placed as in the design (32 × 32 box) */
+.pc-records-icon {
+  position: relative;
+  display: block;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.pc-records-layer {
+  position: absolute;
+}
+
+/* each image overhangs its layer box by the stroke width, as in Figma */
+.pc-records-layer img,
+.pc-records-tick-mark img {
+  position: absolute;
+  display: block;
+  max-width: none;
+  left: -4.17%;
+  width: 108.34%;
+}
+
+.pc-records-top { inset: 8.33% 12.5% 52.08% 12.5%; }
+.pc-records-top img { top: -7.89%; height: 115.78%; }
+.pc-records-middle { inset: 46.24% 12.5% 31.61% 12.5%; }
+.pc-records-middle img { top: -14.11%; height: 128.22%; }
+.pc-records-bottom { inset: 67.77% 12.5% 8.34% 12.5%; }
+.pc-records-bottom img { top: -13.08%; height: 126.16%; }
+
+.pc-records-tick {
+  position: absolute;
+  left: 66.66%;
+  right: 0;
+  top: 21px;
+  aspect-ratio: 1;
+  box-sizing: border-box;
+  background: #fff;
+  border: 0.5px solid #0d233e;
+  border-radius: 100px;
+}
+
+.pc-records-tick-mark {
+  position: absolute;
+  top: 29.17%;
+  bottom: 25%;
+  left: 20.83%;
+  right: 20.83%;
+}
+
+.pc-records-tick-mark img { left: -8.04%; width: 116.08%; top: -10.23%; height: 120.46%; }
+
 .pc-feature-title {
   font-size: 24px;
   font-weight: 500;
@@ -599,6 +689,225 @@ a.pc-btn-login {
   width: 1px;
   height: 48px;
   background: rgba(255, 255, 255, 0.15);
+}
+
+/* ── Subscription (How it works) ── */
+.pc-sub-section {
+  background: #faf6f0;
+  padding: 40px 0 80px;
+}
+
+.pc-sub-head {
+  position: relative;
+  margin-bottom: 64px;
+}
+
+.pc-sub-h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.pc-sub-h2 span {
+  display: block;
+}
+
+.pc-sub-h2-dark {
+  color: #000;
+}
+
+.pc-sub-h2-blue {
+  color: #1147a8;
+}
+
+/* 9 × 4 dot grid, 15px across and 18px down between dots */
+.pc-sub-dots {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: repeat(9, 5px);
+  gap: 13px 10px;
+  pointer-events: none;
+}
+
+.pc-sub-dots span {
+  width: 5px;
+  height: 5px;
+  border-radius: 9999px;
+  background: rgba(11, 49, 105, 0.6);
+}
+
+.pc-sub-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.pc-sub-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 32px 28px;
+  background: #fff;
+  border: 1px solid #f1f5f9;
+  border-radius: 32px;
+  box-shadow: 0 20px 25px -5px rgba(226, 232, 240, 0.4), 0 8px 10px -6px rgba(226, 232, 240, 0.4);
+}
+
+.pc-sub-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.pc-sub-icon-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 9999px;
+  background: #e7f0ff;
+}
+
+.pc-sub-icon {
+  position: relative;
+  display: flex;
+}
+
+.pc-sub-icon > img {
+  display: block;
+}
+
+.pc-sub-badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 2px;
+  background: #1147a8;
+  border: 2px solid #fff;
+  border-radius: 9999px;
+}
+
+.pc-sub-badge img {
+  display: block;
+}
+
+.pc-sub-badge-small {
+  right: 0;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.pc-sub-badge-large {
+  right: -4px;
+  bottom: -4px;
+  width: 28px;
+  height: 28px;
+}
+
+.pc-sub-card-title {
+  flex: 1 0 0;
+  min-width: 1px;
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 36px;
+  color: #1147a8;
+}
+
+.pc-sub-card-body {
+  width: 100%;
+  padding: 0 9.47px;
+  font-size: 16px;
+  line-height: 26px;
+  color: #6f6f6f;
+}
+
+.pc-sub-card-body ul {
+  list-style: none;
+  margin: 26px 0 0;
+  padding: 0;
+}
+
+.pc-sub-card-body li::before {
+  content: "- ";
+}
+
+@media (max-width: 1024px) {
+  .pc-sub-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .pc-sub-dots {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .pc-sub-h2 {
+    font-size: 32px;
+  }
+
+  .pc-sub-head {
+    margin-bottom: 40px;
+  }
+
+  .pc-sub-card {
+    padding: 24px 20px;
+  }
+
+  .pc-sub-card-head {
+    gap: 16px;
+  }
+
+  .pc-sub-icon-bg {
+    width: 88px;
+    height: 88px;
+  }
+
+  .pc-sub-icon > img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .pc-sub-card-title {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .pc-sub-card-body {
+    padding: 0;
+  }
+
+  .pc-uc-inner {
+    padding: 0;
+  }
+
+  .pc-uc-h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .pc-cta-card {
+    padding: 40px 20px;
+    border-radius: 28px;
+  }
+
+  .pc-cta-h2 {
+    font-size: 30px;
+    line-height: 44px;
+  }
 }
 
 /* ── Section helpers ── */
@@ -970,17 +1279,34 @@ a.pc-btn-login {
 }
 
 /* ── When Proxycare Helps ── */
+.pc-uc-section {
+  background: #faf6f0;
+  padding: 40px 0 80px;
+}
+
+.pc-uc-inner {
+  padding: 0 24px;
+}
+
+.pc-uc-h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 60px;
+  color: #1147a8;
+  text-align: center;
+}
+
 .pc-use-cases-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
-  margin-top: 48px;
 }
 
 .pc-use-case-card {
   background: #fff;
-  border: 1px solid #e2e8f0;
-  border-radius: 20px;
+  border: 1px solid #f1f5f9;
+  border-radius: 24px;
   padding: 32px;
   display: flex;
   gap: 24px;
@@ -995,23 +1321,31 @@ a.pc-btn-login {
 .pc-use-case-icon {
   width: 80px;
   height: 80px;
-  border-radius: 50%;
-  background: #f1f5f9;
+  border-radius: 16px;
+  background: #f1f4f9;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.pc-use-case-icon svg {
-  width: 40px;
-  height: 40px;
-  color: #1147a8;
+.pc-use-case-icon img {
+  display: block;
+}
+
+.pc-use-case-text {
+  flex: 1 0 0;
+  min-width: 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
 }
 
 .pc-use-case-title {
   font-size: 20px;
   font-weight: 600;
+  line-height: 28px;
   color: #0d2137;
 }
 
@@ -1019,13 +1353,80 @@ a.pc-btn-login {
   width: 40px;
   height: 2px;
   background: #1147a8;
-  margin: 8px 0 12px;
 }
 
 .pc-use-case-desc {
-  font-size: 15px;
-  color: #6f6f6f;
-  line-height: 1.6;
+  padding: 6.875px 0 0.625px;
+  font-size: 14px;
+  line-height: 22.75px;
+  color: #64748b;
+}
+
+/* ── Subscription CTA ── */
+.pc-cta-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 56px;
+  border-radius: 40px;
+  background: linear-gradient(163.59deg, #0d2137 24.975%, #1147a8 99.975%);
+  text-align: center;
+}
+
+.pc-cta-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  color: #93c5fd;
+}
+
+.pc-cta-label-line {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #93c5fd;
+}
+
+.pc-cta-h2 {
+  max-width: 804px;
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 76px;
+  color: #fff;
+}
+
+.pc-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 12px 32px;
+  border-radius: 12px;
+  background: #fff;
+  color: #0d2137;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.pc-cta-btn:hover {
+  background: #e7f0ff;
+}
+
+/* the Figma icon is a left arrow, mirrored to point right */
+.pc-cta-btn-arrow {
+  display: block;
+  transform: scaleX(-1);
 }
 
 /* ── Team ── */
@@ -2254,12 +2655,18 @@ a.pc-btn-login {
     display: none !important;
   }
 
-  .pc-btn-login {
+  .pc-btn-login,
+  .pc-nav-actions {
     display: none !important;
   }
 
   .pc-nav-mobile-toggle {
     display: flex;
+  }
+
+  /* header bar takes the menu background while the menu is open */
+  .pc-nav.menu-open {
+    background: rgba(250, 246, 240, 0.98);
   }
 
   .pc-nav-mobile-menu {
@@ -2269,11 +2676,14 @@ a.pc-btn-login {
     top: 100%;
     left: 0;
     right: 0;
+    /* full screen below the 64px header bar (40px logo + 12px padding top and bottom) */
+    height: calc(100vh - 64px);
+    height: calc(100dvh - 64px);
+    overflow-y: auto;
     background: rgba(250, 246, 240, 0.98);
-    padding: 16px 24px 24px;
-    gap: 16px;
-    box-shadow: 0 8px 24px rgba(13, 33, 55, 0.1);
-    
+    border-top: 1px solid #e3e6ea;
+    padding: 8px 40px calc(24px + env(safe-area-inset-bottom));
+
     /* Smooth transitions */
     opacity: 0;
     transform: translateY(-10px);
@@ -2294,12 +2704,82 @@ a.pc-btn-login {
     text-decoration: none;
   }
 
+  /* menu rows: label on the left, chevron on the right, divider below */
+  .pc-nav-mobile-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pc-nav-mobile-menu .pc-nav-mobile-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #e3e6ea;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 500;
+    color: #0d2137;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .pc-nav-mobile-chevron {
+    flex-shrink: 0;
+    color: #4b5563;
+    transition: transform 0.3s ease;
+  }
+
+  /* Media: the divider sits below its submenu, not below the toggle */
+  .pc-nav-mobile-dropdown {
+    gap: 0;
+    border-bottom: 1px solid #e3e6ea;
+  }
+
+  .pc-nav-mobile-menu .pc-nav-mobile-dropdown .pc-nav-mobile-dropdown-toggle {
+    border-bottom: none;
+  }
+
+  .pc-nav-mobile-dropdown.open .pc-nav-mobile-dropdown-toggle,
+  .pc-nav-mobile-dropdown.open .pc-nav-mobile-chevron {
+    color: #1147a8;
+  }
+
+  .pc-nav-mobile-dropdown.open .pc-nav-mobile-chevron {
+    transform: rotate(180deg);
+  }
+
+  .pc-nav-mobile-dropdown-menu {
+    gap: 6px;
+    padding: 0 0 16px 16px;
+  }
+
+  .pc-nav-mobile-dropdown-menu a {
+    display: block;
+    padding: 10px 0 10px 16px;
+    border-left: 2px solid #c8d7ee;
+    color: #4b5563;
+    font-weight: 400;
+  }
+
+  /* buttons and contact line pinned to the bottom of the menu */
+  .pc-nav-mobile-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 32px;
+  }
+
   .pc-btn-login-mobile {
     background: #0d2137;
     color: #fff !important;
     border: none;
     border-radius: 10px;
-    padding: 12px 20px;
+    padding: 15px 20px;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
@@ -2307,18 +2787,61 @@ a.pc-btn-login {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 8px;
     transition: background 0.2s;
   }
 
   .pc-btn-login-mobile:hover {
     background: #1147a8;
   }
+
+  .pc-nav-mobile-menu a.pc-btn-nav-outline-mobile {
+    background: #fff;
+    color: #0d2137;
+    border: 1.5px solid #0d2137;
+    border-radius: 10px;
+    padding: 13.5px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pc-nav-mobile-help {
+    margin: 12px 0 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #0d2137;
+  }
+
+  .pc-nav-mobile-contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px 10px;
+    margin: 0;
+    font-size: 14px;
+    color: #6b7280;
+  }
+
+  .pc-nav-mobile-menu .pc-nav-mobile-contact a {
+    font-size: 14px;
+    font-weight: 400;
+    color: #6b7280;
+  }
 }
 
 @media (max-width: 768px) {
   .pc-blogs-listing-inner {
     padding: 0 16px;
+  }
+
+  /* line the menu rows up with the logo (the bar uses 16px side padding here) */
+  .pc-nav-mobile-menu {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 
@@ -3334,5 +3857,397 @@ html.lenis, html.lenis body {
   .pc-hero-actions .pc-btn-secondary {
     width: 100%;
     justify-content: center;
+  }
+}
+/* ── Contact page (Figma: Contact_us_Page V1 desktop 6531:21567, mobile 6531:21680) ── */
+.pc-ct-page {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 128px 100px 56px;
+}
+
+.pc-ct-title {
+  width: 100%;
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #111;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.pc-ct-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px 40px;
+  background: #fff;
+  border: 0.5px solid #b9d5ff;
+  border-radius: 20px;
+  box-shadow: 0 6px 12px 0 rgba(0, 94, 231, 0.12), 0 8px 24px 0 rgba(24, 39, 75, 0.08);
+}
+
+.pc-ct-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.pc-ct-fields {
+  flex: 1 0 0;
+  min-width: 254px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.pc-ct-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.pc-ct-label {
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.36px;
+  color: #111;
+}
+
+/* the 40px gap under each label in Figma is the typing area; the 1px rule below it is the underline */
+.pc-ct-input {
+  width: 100%;
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-bottom: 1px solid #b5b5b5;
+  border-radius: 0;
+  background: transparent;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0.36px;
+  color: #111;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.pc-ct-input:focus {
+  border-bottom-color: #1147a8;
+}
+
+.pc-ct-input::placeholder {
+  color: #929292;
+}
+
+/* WhatsApp card */
+.pc-ct-wa-card {
+  flex: 0 0 616px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 24px 24px 40px;
+  border-radius: 20px;
+  background: linear-gradient(145.18deg, #0d2137 0.72%, #1147a8 100%);
+}
+
+.pc-ct-wa-shape {
+  position: absolute;
+  left: -327px;
+  top: 104px;
+  max-width: none;
+  pointer-events: none;
+}
+
+.pc-ct-wa-message {
+  position: relative;
+  flex: 1 0 0;
+  min-width: 1px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pc-ct-wa-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.64px;
+  color: #feffff;
+}
+
+.pc-ct-wa-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  height: 54px;
+  border-radius: 12px;
+  background: #1fb95a;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.pc-ct-wa-btn:hover {
+  background: #1aa54f;
+}
+
+.pc-ct-wa-btn img {
+  display: block;
+  flex-shrink: 0;
+}
+
+/* "or" divider: a vertical rule through the badge on desktop, a horizontal one on mobile */
+.pc-ct-wa-or {
+  position: relative;
+  align-self: stretch;
+  flex-shrink: 0;
+  width: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pc-ct-wa-or-line {
+  flex: 1 0 0;
+  width: 1px;
+  background: #e3e7ee;
+}
+
+.pc-ct-wa-or-badge {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border: 1px solid #fff;
+  border-radius: 18px;
+  background: #0f3572;
+  filter: drop-shadow(0 2px 4px rgba(13, 33, 54, 0.08));
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #feffff;
+}
+
+.pc-ct-wa-qr {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.pc-ct-wa-qr-tile {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #fff;
+}
+
+.pc-ct-wa-qr-img {
+  display: block;
+  object-fit: cover;
+}
+
+/* green logo over the QR's own (white) centre logo; kept within that blank centre so the code still scans */
+.pc-ct-wa-qr-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  transform: translate(-50%, -50%);
+}
+
+.pc-ct-wa-qr-caption {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.28px;
+  color: #feffff;
+  white-space: nowrap;
+}
+
+/* note + submit */
+.pc-ct-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.pc-ct-note {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pc-ct-textarea {
+  height: auto;
+  min-height: 37px;
+  padding-bottom: 8px;
+  line-height: 1.6;
+  resize: none;
+  field-sizing: content;
+}
+
+.pc-ct-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 170px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #0d2137;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #feffff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.pc-ct-submit:hover:not(:disabled) {
+  background: #1147a8;
+}
+
+.pc-ct-submit:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+/* tablet: fields above the WhatsApp card, card keeps its desktop layout */
+@media (max-width: 1200px) {
+  .pc-ct-page {
+    padding: 112px 40px 48px;
+  }
+
+  .pc-ct-top {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pc-ct-fields,
+  .pc-ct-wa-card {
+    flex: none;
+    min-width: 0;
+  }
+}
+
+/* mobile (Figma 6531:21680): fields, note, Submit, then the WhatsApp card */
+@media (max-width: 768px) {
+  .pc-ct-page {
+    gap: 24px;
+    padding: 96px 16px 40px; /* 32px below the 64px header bar */
+  }
+
+  .pc-ct-title {
+    font-size: 28px;
+    line-height: 1.25;
+  }
+
+  .pc-ct-card {
+    padding: 24px 20px;
+  }
+
+  /* lift the fields and WhatsApp card out of their row so they can be reordered */
+  .pc-ct-top {
+    display: contents;
+  }
+
+  .pc-ct-fields { order: 1; }
+  .pc-ct-bottom { order: 2; }
+  .pc-ct-wa-card { order: 3; }
+
+  .pc-ct-submit {
+    width: 100%;
+  }
+
+  .pc-ct-wa-card {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 28px 24px;
+    background: linear-gradient(113.31deg, #0d2137 0.72%, #1147a8 100%);
+  }
+
+  .pc-ct-wa-shape {
+    left: -260px;
+    top: 185px;
+  }
+
+  .pc-ct-wa-message {
+    flex: none;
+    width: 100%;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .pc-ct-wa-title {
+    font-size: 20px;
+    line-height: normal;
+    letter-spacing: 0.4px;
+    text-align: center;
+  }
+
+  .pc-ct-wa-btn {
+    height: auto;
+    gap: 8px;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 12px;
+  }
+
+  .pc-ct-wa-btn img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .pc-ct-wa-or {
+    align-self: stretch;
+    width: auto;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .pc-ct-wa-or-line {
+    width: auto;
+    height: 1px;
+  }
+
+  .pc-ct-wa-qr-caption {
+    text-align: center;
   }
 }
