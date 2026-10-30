@@ -889,25 +889,6 @@ a.pc-btn-login {
   .pc-sub-card-body {
     padding: 0;
   }
-
-  .pc-uc-inner {
-    padding: 0;
-  }
-
-  .pc-uc-h2 {
-    font-size: 32px;
-    line-height: 40px;
-  }
-
-  .pc-cta-card {
-    padding: 40px 20px;
-    border-radius: 28px;
-  }
-
-  .pc-cta-h2 {
-    font-size: 30px;
-    line-height: 44px;
-  }
 }
 
 /* ── Section helpers ── */
@@ -1429,6 +1410,28 @@ a.pc-btn-login {
   transform: scaleX(-1);
 }
 
+/* phones (placed after the base rules above so these win) */
+@media (max-width: 768px) {
+  .pc-uc-inner {
+    padding: 0;
+  }
+
+  .pc-uc-h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .pc-cta-card {
+    padding: 40px 20px;
+    border-radius: 28px;
+  }
+
+  .pc-cta-h2 {
+    font-size: 30px;
+    line-height: 44px;
+  }
+}
+
 /* ── Team ── */
 .pc-team-grid {
   display: flex;
@@ -1647,21 +1650,31 @@ a.pc-btn-login {
   display: inline-block;
 }
 
-.pc-faq-title {
-  font-size: 60px;
-  line-height: 1.1;
+/* same scale as the other homepage section headings (48px / 600, 32px on phones) */
+.pc-faq-title,
+.pc-section-h2 {
+  font-size: 48px;
+  line-height: 1.25;
   font-family: "Playfair Display", serif;
-  font-weight: 500;
+  font-weight: 600;
   color: #1a1a1a;
   margin-top: 16px;
   margin-bottom: 0;
 }
 
+.pc-section-h2 {
+  color: #0d2137; /* keeps the team heading's existing colour */
+}
+
 .pc-faq-title-italic {
-  font-family: "Newsreader", "Playfair Display", serif;
-  font-style: italic;
   color: #1147a8;
-  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .pc-faq-title,
+  .pc-section-h2 {
+    font-size: 32px;
+  }
 }
 
 .pc-faq-subtitle {
@@ -3849,14 +3862,30 @@ html.lenis, html.lenis body {
   margin-top: 32px;
 }
 @media (max-width: 768px) {
+  /* side by side, equal widths */
   .pc-hero-actions {
-    flex-direction: column;
+    flex-direction: row;
     align-items: stretch;
+    align-self: stretch;
+    gap: 12px;
   }
   .pc-hero-actions .pc-btn-primary,
   .pc-hero-actions .pc-btn-secondary {
-    width: 100%;
+    flex: 1 1 0;
+    min-width: 0;
+    width: auto;
     justify-content: center;
+    padding: 14px 12px !important; /* the secondary button's padding is set inline */
+    white-space: nowrap;
+  }
+}
+/* smallest phones: keep both buttons on one row */
+@media (max-width: 360px) {
+  .pc-hero-actions .pc-btn-primary,
+  .pc-hero-actions .pc-btn-secondary {
+    padding: 14px 8px !important;
+    gap: 6px !important;
+    font-size: 15px !important;
   }
 }
 /* ── Contact page (Figma: Contact_us_Page V1 desktop 6531:21567, mobile 6531:21680) ── */

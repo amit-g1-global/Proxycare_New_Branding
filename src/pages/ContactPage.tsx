@@ -140,7 +140,8 @@ export default function ContactPage() {
       });
 
       const result = await response.json();
-      if (response.ok && (result.success === 'true' || result.success === true || result.success)) {
+      // FormSubmit reports failures as success: "false" (a non-empty string), so only an explicit true counts
+      if (response.ok && (result.success === true || result.success === 'true')) {
         showNotification('Your details submitted successfully.', 'success');
         setForm({ name: '', mail: '', phone: '', message: '' });
       } else {

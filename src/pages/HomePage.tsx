@@ -216,7 +216,7 @@ const Steps = () => (
         <div className="pc-sub-head">
           <h2 className="pc-sub-h2">
             <span className="pc-sub-h2-dark">One Subscription</span>
-            <span className="pc-sub-h2-blue">All Your Healthcare Needs, Co-ordinated</span>
+            <span className="pc-sub-h2-blue">All Your Healthcare Needs, <span style={{ display: 'inline', whiteSpace: 'nowrap' }}>Co-ordinated</span></span>
           </h2>
           <div className="pc-sub-dots" aria-hidden="true">
             {Array.from({ length: 36 }).map((_, i) => <span key={i} />)}
@@ -316,7 +316,7 @@ const Team = () => (
       <FadeIn>
         <div style={{ textAlign: 'center' }}>
           <span className="pc-pill">OUR TEAM</span>
-          <h2 className="pc-h2" style={{ marginTop: 16 }}>Built by people <span style={{ color: '#1147a8' }}>who care about care</span></h2>
+          <h2 className="pc-section-h2">Built by people <span style={{ color: '#1147a8' }}>who care about care</span></h2>
           <p className="pc-sub" style={{ marginTop: 12 }}>Medical expertise, technology leadership, and a shared belief that healthcare should be personal.</p>
         </div>
       </FadeIn>

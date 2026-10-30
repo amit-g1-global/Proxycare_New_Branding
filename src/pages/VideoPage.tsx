@@ -69,11 +69,11 @@ export default function VideoPage() {
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Navbar />
       
-      <main style={{ flex: 1, background: '#faf6f0', padding: '160px 0 80px' }}>
+      <main style={{ flex: 1, background: '#faf6f0', padding: '128px 0 80px' }}>
         <div className="pc-container">
           
           <div style={{ textAlign: 'center', marginBottom: 64 }}>
-            <h1 className="pc-h2" style={{ marginTop: 16 }}>Follow Our <span style={{ color: '#1147a8' }}>Journey</span></h1>
+            <h1 className="pc-h2">Follow Our <span style={{ color: '#1147a8' }}>Journey</span></h1>
             <p className="pc-sub" style={{ marginTop: 12 }}>Stay connected with Proxycare. Watch our guides and keep up with our latest updates.</p>
           </div>
 
