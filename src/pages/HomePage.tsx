@@ -46,6 +46,16 @@ import Minus_Icon from '../assets/Minus_Icon.svg';
 import Ifen from '../assets/Ifen.svg';
 import Parvez_Image from '../assets/Parvez.jpg';
 import Jagat_Image from '../assets/Jagat.png';
+import { TAKE_A_TEST_URL, METABOLIC_SCORE_URL } from '../constants/externalLinks';
+
+/** In-app paths use the router; full URLs are plain links (same tab on proxy.care, new tab for other sites). */
+const RibbonLink = ({ to, className, children }: { to: string; className: string; children: React.ReactNode }) => {
+  if (!/^https?:\/\//.test(to)) return <Link to={to} className={className}>{children}</Link>;
+  const sameSite = /^https?:\/\/(www\.)?proxy\.care(\/|$)/.test(to);
+  return sameSite
+    ? <a href={to} className={className}>{children}</a>
+    : <a href={to} className={className} target="_blank" rel="noopener noreferrer">{children}</a>;
+};
 
 /* ── Hero ── */
 const Hero = () => {
@@ -144,6 +154,18 @@ const Hero = () => {
       )}
 
       <div style={{ padding: '0 24px 24px', position: 'relative', zIndex: 2 }}>
+        <div className="pc-risk-ribbon">
+          <p className="pc-risk-title">Know your risk. Act early.</p>
+          <span className="pc-risk-divider" aria-hidden="true" />
+          <div className="pc-risk-message">
+            <p className="pc-risk-headline">Feeling healthy doesn’t always mean being healthy.</p>
+            <p className="pc-risk-stat"><strong>43%</strong> of people with diabetes in India remain undiagnosed.</p>
+          </div>
+          <div className="pc-risk-actions">
+            <RibbonLink to={TAKE_A_TEST_URL} className="pc-risk-btn pc-risk-btn-solid">Take a test</RibbonLink>
+            <RibbonLink to={METABOLIC_SCORE_URL} className="pc-risk-btn pc-risk-btn-outline">Check your Metabolic score</RibbonLink>
+          </div>
+        </div>
         <div className="pc-features-bar">
           {[
             {

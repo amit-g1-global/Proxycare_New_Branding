@@ -599,6 +599,173 @@ a.pc-btn-login {
   z-index: 2;
 }
 
+/* ── Metabolic risk ribbon (Figma 6582:44478), directly above the features bar ── */
+.pc-risk-ribbon {
+  margin: 0 24px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 8px clamp(24px, 7vw, 100.5px);
+  overflow: hidden;
+  border-radius: 16px;
+  background: linear-gradient(to right, #0d2137, #1147a8);
+}
+
+.pc-risk-title {
+  flex-shrink: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 34px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.pc-risk-divider {
+  flex-shrink: 0;
+  width: 1.5px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.pc-risk-message {
+  flex: 0 1 566.5px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-family: "Poppins", sans-serif;
+}
+
+.pc-risk-headline {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: #fff;
+}
+
+.pc-risk-stat {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #c9d6ee;
+}
+
+.pc-risk-stat strong {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  margin-right: 4px;
+}
+
+.pc-risk-actions {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.pc-risk-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 22px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+
+.pc-risk-btn-solid {
+  background: #fff;
+  color: #0d2137;
+}
+
+.pc-risk-btn-solid:hover {
+  background: #e7f0ff;
+}
+
+.pc-risk-btn-outline {
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.pc-risk-btn-outline:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* narrower screens: stack the text above the buttons, centred */
+@media (max-width: 1100px) {
+  .pc-risk-ribbon {
+    flex-wrap: wrap;
+    row-gap: 10px;
+    padding: 14px 24px;
+  }
+
+  .pc-risk-message {
+    flex: 0 1 auto;
+  }
+}
+
+/* same side margins as the features bar below it */
+@media (max-width: 1024px) {
+  .pc-risk-ribbon {
+    margin: 0 16px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* phones: the banner takes the hero image's place, directly under the hero buttons */
+  .pc-hero-right {
+    display: none !important;
+  }
+
+  .pc-risk-ribbon {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    text-align: left;
+    padding: 20px 16px;
+  }
+
+  .pc-risk-title {
+    font-size: 24px;
+    white-space: normal;
+  }
+
+  .pc-risk-divider {
+    display: none;
+  }
+
+  .pc-risk-message {
+    gap: 6px;
+  }
+
+  .pc-risk-headline {
+    font-size: 15px;
+    line-height: 1.35;
+  }
+
+  .pc-risk-stat {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  /* full-width buttons, one above the other */
+  .pc-risk-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+}
+
 .pc-feature-item {
   display: flex;
   align-items: center;
