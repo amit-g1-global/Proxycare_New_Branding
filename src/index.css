@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-playfair: "Playfair Display", serif;
-  --font-inter: "Inter", sans-serif;
+  --font-inter: "Poppins", sans-serif;
 
   --color-pc-navy: #0d2137;
   --color-pc-navy-deep: #0b224f;
@@ -34,7 +34,7 @@
   }
 
   body {
-    font-family: "Inter", sans-serif;
+    font-family: "Poppins", sans-serif;
     background-color: #faf6f0;
     color: #0d2137;
     -webkit-font-smoothing: antialiased;
@@ -673,7 +673,7 @@ a.pc-btn-login {
   box-sizing: border-box;
   padding: 8px 18px;
   border-radius: 8px;
-  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 13px;
   font-weight: 600;
   line-height: 22px;
@@ -826,7 +826,7 @@ a.pc-btn-login {
   border: 1px solid rgba(13, 33, 55, 0.1);
   border-radius: 12px;
   background: #fff;
-  font-family: "Roboto", "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 16px;
   line-height: 30px;
   color: #1e2a44;
@@ -882,7 +882,7 @@ a.pc-btn-login {
   border-radius: 12px;
   background: #002761;
   box-shadow: 0 8px 20px 0 rgba(37, 99, 235, 0.35);
-  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 17px;
   font-weight: 600;
   line-height: 28px;
@@ -2022,7 +2022,7 @@ a.pc-btn-login {
 .pc-faq-pill {
   background: #e8f0fe;
   color: #1147a8;
-  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
   text-transform: uppercase;
   font-size: 12px;
@@ -2060,7 +2060,7 @@ a.pc-btn-login {
 }
 
 .pc-faq-subtitle {
-  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 18px;
   color: #64748b;
   line-height: 28px;
@@ -2106,7 +2106,7 @@ a.pc-btn-login {
   font-size: 20px;
   font-weight: 500;
   color: #1147a8;
-  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
   line-height: 28px;
   transition: color 0.3s ease;
 }
@@ -2141,7 +2141,7 @@ a.pc-btn-login {
 .pc-accordion-body-content {
   padding: 0 33px 33px 33px;
   font-size: 18px;
-  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #475569;
   line-height: 29.25px;
 }
@@ -2193,7 +2193,7 @@ a.pc-btn-login {
   font-weight: 700;
   color: #0d2137;
   margin-bottom: 24px;
-  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .pc-footer-light-links {
@@ -2841,7 +2841,7 @@ a.pc-btn-login {
 }
 
 .pc-blog-article-content h2 {
-  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 18px;
   font-weight: 700;
   line-height: 1.45;
@@ -3349,7 +3349,7 @@ a.pc-btn-login {
 }
 
 .pc-contact-office-title {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 32px;
   font-weight: 600;
   color: #feffff;
@@ -3400,7 +3400,7 @@ a.pc-btn-login {
 
 .pc-contact-info-row p,
 .pc-contact-info-row a {
-  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 500;
   color: #feffff;
@@ -3479,7 +3479,7 @@ a.pc-btn-login {
   border-bottom: 1.5px solid #d0d4da;
   outline: none;
   padding: 6px 0;
-  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: #111;
@@ -3520,7 +3520,7 @@ a.pc-btn-login {
   border: none;
   border-radius: 8px;
   padding: 10px 20px;
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 18px;
   font-weight: 700;
   cursor: pointer;
@@ -3631,7 +3631,7 @@ html.lenis, html.lenis body {
   align-items: center;
   border-bottom: 1.5px solid #d0d4da;
   padding: 6px 0;
-  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 18px;
   font-weight: 300;
   color: #929292;
@@ -4341,7 +4341,7 @@ html.lenis, html.lenis body {
   border-bottom: 1px solid #b5b5b5;
   border-radius: 0;
   background: transparent;
-  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 18px;
   font-weight: 300;
   letter-spacing: 0.36px;

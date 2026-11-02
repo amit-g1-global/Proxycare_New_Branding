@@ -31,7 +31,7 @@ export default function VideoPage() {
         // Fallback to mock data if Channel ID is not yet provided
         setYoutubeVideos([
           { id: 'mock1', title: 'Understanding Proxycare Coordination', date: 'Oct 12, 2026', thumbnailUrl: '' },
-          { id: 'mock2', title: 'How to organize your medical records', date: 'Oct 05, 2026', thumbnailUrl: '' },
+          { id: 'mock2', title: 'How to organise your medical records', date: 'Oct 05, 2026', thumbnailUrl: '' },
           { id: 'mock3', title: 'Emergency support explained', date: 'Sep 28, 2026', thumbnailUrl: '' },
         ]);
         setIsLoadingYoutube(false);

@@ -68,7 +68,7 @@ export const Footer = () => {
             {[
               { name: 'LinkedIn', icon: <img src="/assets/linkedin.png" alt="LinkedIn" style={{ width: 18, height: 18 }} />, url: 'https://www.linkedin.com/company/myproxycare' },
               { name: 'Instagram', icon: <img src="/assets/instagram.png" alt="Instagram" style={{ width: 18, height: 18 }} />, url: 'https://www.instagram.com/proxycare.india?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==' },
-              { name: 'FaceBook', icon: <img src="/assets/facebook.png" alt="Facebook" style={{ width: 18, height: 18 }} />, url: 'https://www.facebook.com/proxycare.india' },
+              { name: 'Facebook', icon: <img src="/assets/facebook.png" alt="Facebook" style={{ width: 18, height: 18 }} />, url: 'https://www.facebook.com/proxycare.india' },
               { name: 'Youtube', icon: <img src="/assets/youtube.png" alt="YouTube" style={{ width: 18, height: 18 }} />, url: 'https://www.youtube.com/channel/UC1HKRNh1Z7wbG-F3F0MX0Ug' },
             ].map(s => (
               <li key={s.name} className="pc-footer-light-social">
@@ -81,7 +81,7 @@ export const Footer = () => {
           </ul>
         </div>
         <div>
-          <div className="pc-footer-light-title">Contacts us</div>
+          <div className="pc-footer-light-title">Contact us</div>
           <ul className="pc-footer-light-contacts">
             <li>
               <Mail size={18} className="pc-contact-icon" />
@@ -105,7 +105,7 @@ export const Footer = () => {
         </div>
       </div>
       <div className="pc-footer-light-bottom">
-        <span>Copyright © 2025 Proxycare</span>
+        <span>Copyright © {new Date().getFullYear()} Proxycare</span>
         <div>
           All Rights Reserved | <Link to="/terms-and-conditions">Terms and Conditions</Link> | <Link to="/privacy-policy">Privacy Policy</Link>
         </div>

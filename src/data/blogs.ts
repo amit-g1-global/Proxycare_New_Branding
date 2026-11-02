@@ -30,7 +30,7 @@ export const blogPosts: BlogPost[] = [
     image: blogImg1,
     category: 'Health Care',
     title: 'Preventive Care Tips: How High-Net-Worth Families Stay Ahead of Health Risks',
-    excerpt: 'Discover how high-net-worth families stay ahead of health risks with preventive care and personalized wellness plans.',
+    excerpt: 'Discover how high-net-worth families stay ahead of health risks with preventive care and personalised wellness plans.',
     date: '05 Oct 2025',
     readTime: '7 min read',
     intro: [
@@ -45,9 +45,9 @@ export const blogPosts: BlogPost[] = [
         ]
       },
       {
-        heading: '2. Personalized Health Plans for Each Family Member',
+        heading: '2. Personalised Health Plans for Each Family Member',
         paragraphs: [
-          'Medical needs, genetics, and goals differ. Leading families rely on personalized, physician-created plans - proactive testing, AI-driven recommendations, and digital check-ins.'
+          'Medical needs, genetics, and goals differ. Leading families rely on personalised, physician-created plans - proactive testing, AI-driven recommendations, and digital check-ins.'
         ]
       },
       {
@@ -92,7 +92,7 @@ export const blogPosts: BlogPost[] = [
         heading: '1. Understanding an Emergency Plan',
         paragraphs: [
           'An emergency plan is a proactive approach that outlines the critical steps to take when urgent medical care is needed. It’s more than just a list of hospitals or emergency numbers - it’s a well-orchestrated system that ensures your family receives the right care, at the right time, with zero confusion.',
-          'For high-net-worth families who travel often or manage multiple residences, having a personalized plan brings structure and reliability. It ensures continuity of care - whether you’re at home, on vacation, or abroad.'
+          'For high-net-worth families who travel often or manage multiple residences, having a personalised plan brings structure and reliability. It ensures continuity of care - whether you’re at home, on vacation, or abroad.'
         ]
       },
       {
@@ -101,7 +101,7 @@ export const blogPosts: BlogPost[] = [
           'Even the most advanced medical systems can feel overwhelming during a crisis. Having a plan in place helps you:',
           '• Avoid panic and delay - When everyone knows what to do, response time improves dramatically.',
           '• Get the right help faster - Pre-identified hospitals, specialists, and care teams save crucial minutes.',
-          '• Stay organized - With updated medical histories and insurance details ready, treatment begins sooner.',
+          '• Stay organised - With updated medical histories and insurance details ready, treatment begins sooner.',
           '• Ensure family coordination - Everyone, from parents to caregivers, understands their role in an emergency.',
           '• It’s not about fearing the worst - it’s about being ready for anything.',
           '• Avoid panic and delay - When everyone knows what to do, response time improves dramatically.'
@@ -111,7 +111,7 @@ export const blogPosts: BlogPost[] = [
         heading: '3. What an Effective Emergency Plan Includes',
         paragraphs: [
           'A strong plan covers several layers of preparedness:',
-          '1. Personalized Medical Records: Digital access to health history, allergies, and prescriptions ensures doctors make quick, informed decisions.',
+          '1. Personalised Medical Records: Digital access to health history, allergies, and prescriptions ensures doctors make quick, informed decisions.',
           '2. Preferred Healthcare Facilities: Pre-select hospitals or concierge medical providers that align with your family’s standards of care.',
           '3. Dedicated Emergency Contacts: Include family members, private doctors, and health assistants who can coordinate instantly.',
           '4. Travel and Remote Care Protocols: For families who split time between cities or countries, add details for teleconsultations and cross-location support.',
@@ -121,7 +121,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: '4. Preparedness Is the New Luxury',
         paragraphs: [
-          'True peace of mind doesn’t come from avoiding emergencies - it comes from knowing you’re ready to handle them. Families who invest in personalized, concierge-style healthcare don’t just react when things go wrong; they plan, prepare, and stay one step ahead.',
+          'True peace of mind doesn’t come from avoiding emergencies - it comes from knowing you’re ready to handle them. Families who invest in personalised, concierge-style healthcare don’t just react when things go wrong; they plan, prepare, and stay one step ahead.',
           'This shift from reactive to proactive care reflects a growing understanding: health security is an integral part of overall wellbeing and lifestyle quality.'
         ]
       },
@@ -129,7 +129,7 @@ export const blogPosts: BlogPost[] = [
         heading: '5. Building Confidence Through Proactive Care',
         paragraphs: [
           'An emergency plan works best when integrated with ongoing preventive care - regular health assessments, virtual consultations, and coordinated follow-ups. It’s this blend of preparedness and prevention that keeps families confident, calm, and protected no matter what life brings.',
-          'Be prepared for the unexpected. Experience peace of mind knowing your family’s healthcare is organized, responsive, and always within reach.'
+          'Be prepared for the unexpected. Experience peace of mind knowing your family’s healthcare is organised, responsive, and always within reach.'
         ]
       }
     ]
@@ -218,7 +218,7 @@ export const blogPosts: BlogPost[] = [
         heading: '2. Nutrition: Eating with Awareness, Not Restriction',
         paragraphs: [
           'A balanced diet doesn’t mean giving up favorite foods - it means learning the right proportions and timing. Prioritize fiber-rich vegetables, whole grains, lean proteins, and healthy fats while moderating simple carbs.',
-          'Working with a nutritionist or a personalized care team ensures your meal plan fits your lifestyle. For busy families, having a dedicated care assistant who supports diet planning or home-chef coordination can be a game changer.',
+          'Working with a nutritionist or a personalised care team ensures your meal plan fits your lifestyle. For busy families, having a dedicated care assistant who supports diet planning or home-chef coordination can be a game changer.',
           'It’s about empowerment through education, not restriction.'
         ]
       },
@@ -226,7 +226,7 @@ export const blogPosts: BlogPost[] = [
         heading: '3. Staying Active and Mindful',
         paragraphs: [
           'Exercise is one of the most effective ways to regulate blood sugar naturally. Activities like walking, yoga, swimming, or light strength training enhance insulin sensitivity.',
-          'Overexertion or skipping meals can cause sugar dips - that’s why personalized activity guidance is essential. Concierge programs often pair clients with wellness coaches or physiotherapists for safe, sustainable routines.'
+          'Overexertion or skipping meals can cause sugar dips - that’s why personalised activity guidance is essential. Concierge programs often pair clients with wellness coaches or physiotherapists for safe, sustainable routines.'
         ]
       },
       {
@@ -253,7 +253,7 @@ export const blogPosts: BlogPost[] = [
     ],
     closingTitle: 'Conclusion',
     closingParagraphs: [
-      'Managing diabetes at home isn’t just about discipline - it’s about designing a care system that adapts to your life. With personalized attention, structured monitoring, and compassionate support, individuals can live confidently without constantly worrying about fluctuating health.',
+      'Managing diabetes at home isn’t just about discipline - it’s about designing a care system that adapts to your life. With personalised attention, structured monitoring, and compassionate support, individuals can live confidently without constantly worrying about fluctuating health.',
       'Experience healthcare designed around you.',
       'Connect with a dedicated team that supports your wellness right from your home.'
     ]
@@ -264,11 +264,11 @@ export const blogPosts: BlogPost[] = [
     image: blogImg5,
     category: 'Health Care',
     title: 'Understanding Concierge in Healthcare: How Proxycare Is Different',
-    excerpt: 'Discover how concierge services in healthcare can enhance your medical experience. Learn about personalized care and support with Proxycare today.',
+    excerpt: 'Discover how concierge services in healthcare can enhance your medical experience. Learn about personalised care and support with Proxycare today.',
     date: '05 Oct 2025',
     readTime: '7 min read',
     intro: [
-      'In today’s complex healthcare world, families often struggle with fragmented systems, long wait times, and a lack of personal connection. Concierge healthcare offers a better way - one built on continuity, accessibility, and personalized medical attention. For families who value trusted relationships and convenience, this approach redefines what quality care truly means.'
+      'In today’s complex healthcare world, families often struggle with fragmented systems, long wait times, and a lack of personal connection. Concierge healthcare offers a better way - one built on continuity, accessibility, and personalised medical attention. For families who value trusted relationships and convenience, this approach redefines what quality care truly means.'
     ],
     sections: [
       {
@@ -285,7 +285,7 @@ export const blogPosts: BlogPost[] = [
           '• Limited follow-up after diagnosis or discharge',
           '• Repetition of tests and conflicting medical advice',
           '• Lack of ongoing support for chronic conditions',
-          'This disconnect leads to frustration and missed opportunities for early intervention. Concierge healthcare bridges these gaps with continuity and personalized oversight.'
+          'This disconnect leads to frustration and missed opportunities for early intervention. Concierge healthcare bridges these gaps with continuity and personalised oversight.'
         ]
       },
       {
@@ -325,7 +325,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Why It Matters for Families',
         paragraphs: [
-          'For families seeking trustworthy, proactive, and comprehensive care, Proxycare bridges the gap between traditional healthcare and true personalized service. Whether it\'s preventive wellness, chronic condition management, or rapid emergency support, Proxycare ensures peace of mind and consistency that’s hard to find elsewhere.',
+          'For families seeking trustworthy, proactive, and comprehensive care, Proxycare bridges the gap between traditional healthcare and true personalised service. Whether it\'s preventive wellness, chronic condition management, or rapid emergency support, Proxycare ensures peace of mind and consistency that’s hard to find elsewhere.',
           'Choose healthcare that guides you all the way. Experience truly connected, compassionate, and continuous care - right from the comfort of your home.'
         ]
       }

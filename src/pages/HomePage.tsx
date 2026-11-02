@@ -131,7 +131,7 @@ const Hero = () => {
             </div>
             <div className="pc-float-card card-light pc-card-bot-right">
               <div className="pc-float-card-icon"><img src={Digitized_Records} alt="Records" style={{ width: 28, height: 28 }} /></div>
-              <div className="pc-float-card-label">All records organized</div>
+              <div className="pc-float-card-label">All records organised</div>
             </div>
           </div>
         </div>
@@ -201,7 +201,7 @@ const Hero = () => {
                   <span className="pc-records-tick"><span className="pc-records-tick-mark"><img src={records_tick} alt="" /></span></span>
                 </span>
               ),
-              title: 'Fully Digitized',
+              title: 'Fully Digitised',
               sub: 'Medical Records',
             },
             { icon: <img src={feature_user} alt="" style={{ width: 32, height: 32 }} />, title: 'Dedicated', sub: 'Health Assistant' },
@@ -230,9 +230,9 @@ const subscriptionCards = [
   {
     icon: <img src={sub_records} alt="" width={60} height={60} />,
     badge: 'small',
-    title: 'Fully Digitized Medical Records',
-    intro: 'We collect your medical history, digitize your reports, prescriptions, and vital signs, and organise them into a clear medical summary. Your records are regularly updated to keep your health information current. It is accessible to you and your doctors with just one click.',
-    points: ['Medical history collection', 'Reports digitized in EMR', 'Medical summary created'],
+    title: 'Fully Digitised Medical Records',
+    intro: 'We collect your medical history, digitise your reports, prescriptions, and vital signs, and organise them into a clear medical summary. Your records are regularly updated to keep your health information current. It is accessible to you and your doctors with just one click.',
+    points: ['Medical history collection', 'Reports digitised in EMR', 'Medical summary created'],
   },
   {
     icon: <img src={sub_user} alt="" width={64} height={64} />,
@@ -262,7 +262,7 @@ const Steps = () => (
         <div className="pc-sub-head">
           <h2 className="pc-sub-h2">
             <span className="pc-sub-h2-dark">One Subscription</span>
-            <span className="pc-sub-h2-blue">All Your Healthcare Needs, <span style={{ display: 'inline', whiteSpace: 'nowrap' }}>Co-ordinated</span></span>
+            <span className="pc-sub-h2-blue">All Your Healthcare Needs, <span style={{ display: 'inline', whiteSpace: 'nowrap' }}>Coordinated</span></span>
           </h2>
           <div className="pc-sub-dots" aria-hidden="true">
             {Array.from({ length: 36 }).map((_, i) => <span key={i} />)}
@@ -317,7 +317,7 @@ const UseCases = () => (
             { icon: uc_files, title: 'Your medical records are scattered', desc: 'Reports and prescriptions are spread across providers. We bring them together into one organised medical summary.' },
             { icon: uc_health, title: 'You want to stay ahead of your health', desc: 'We help you plan preventive screenings, and stay on track with follow-ups.' },
             { icon: uc_door, title: "You're not prepared for a medical emergency", desc: 'We help organise essential medical information and emergency contacts into an Emergency Care Plan.' },
-            { icon: uc_give_blood, title: 'Your parents need care from a distance', desc: "We coordinate appointments, reports, and follow-ups to help keep your parents healthcare connected." },
+            { icon: uc_give_blood, title: 'Your parents need care from a distance', desc: "We coordinate appointments, reports, and follow-ups to help keep your parents' healthcare connected." },
           ].map((c, i) => (
             <FadeIn key={c.title} className="pc-use-case-card" delay={i * 150}>
               <div className="pc-use-case-icon"><img src={c.icon} alt="" width={48} height={48} /></div>
@@ -465,7 +465,7 @@ const Testimonials = () => {
 const faqs = [
   {
     q: 'What exactly is Proxycare?',
-    a: 'Proxycare is an independent healthcare coordination service. We act as your proxy - handling the logistics of healthcare on your behalf. We organize your medical records, coordinate appointments and follow-ups, and support you during hospital visits and emergencies - so you don\'t have to manage it all alone.'
+    a: 'Proxycare is an independent healthcare coordination service. We act as your proxy - handling the logistics of healthcare on your behalf. We organise your medical records, coordinate appointments and follow-ups, and support you during hospital visits and emergencies - so you don\'t have to manage it all alone.'
   },
   {
     q: 'Who is a dedicated health assistant?',
@@ -477,7 +477,7 @@ const faqs = [
   },
   {
     q: 'Will Proxycare replace my existing doctors?',
-    a: 'Not at all. We work alongside your existing doctors and hospitals - never independently of them. You keep all your current doctor relationships. Proxycare simply makes sure your care is better organized and followed through.'
+    a: 'Not at all. We work alongside your existing doctors and hospitals - never independently of them. You keep all your current doctor relationships. Proxycare simply makes sure your care is better organised and followed through.'
   },
   {
     q: 'Can Proxycare help manage my parent\'s healthcare remotely?',
