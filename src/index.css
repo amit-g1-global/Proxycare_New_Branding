@@ -766,6 +766,221 @@ a.pc-btn-login {
   }
 }
 
+/* ── rAVINE run 4.0 banner (Figma 6564:33779), between the risk ribbon and the features bar ── */
+.pc-ravine-banner {
+  position: relative;
+  margin: 0 24px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 16px clamp(32px, 4vw, 96px);
+  overflow: hidden;
+  border: 1.5px solid rgba(37, 99, 235, 0.16);
+  border-radius: 20px;
+  background: linear-gradient(to right, #fff6f5, #fff 40%, #e6eeff);
+  box-shadow: 0 2px 6px 0 rgba(13, 33, 54, 0.06), 0 14px 36px 0 rgba(13, 33, 54, 0.14);
+}
+
+/* decorative circles, anchored to the right edge as in the 1414px-wide Figma frame */
+.pc-ravine-circle {
+  position: absolute;
+  max-width: none;
+  pointer-events: none;
+}
+
+.pc-ravine-circle-small {
+  right: 73.5px;
+  top: 78.5px;
+}
+
+.pc-ravine-circle-large {
+  right: 93.5px;
+  top: -121.5px;
+}
+
+.pc-ravine-accent {
+  position: absolute;
+  left: -1.5px;
+  top: -1.5px;
+  bottom: -1.5px;
+  width: 8px;
+  background: linear-gradient(to bottom, #e30613, #2563eb);
+}
+
+.pc-ravine-event {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.pc-ravine-logo {
+  display: block;
+}
+
+.pc-ravine-pill {
+  padding: 8px 22px;
+  border: 1px solid rgba(13, 33, 55, 0.1);
+  border-radius: 12px;
+  background: #fff;
+  font-family: "Roboto", "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 30px;
+  color: #1e2a44;
+  white-space: nowrap;
+}
+
+.pc-ravine-divider {
+  position: relative;
+  flex-shrink: 0;
+  width: 2px;
+  height: 132px;
+  background: linear-gradient(to bottom, rgba(227, 6, 19, 0.3), rgba(37, 99, 235, 0.3));
+}
+
+.pc-ravine-main {
+  position: relative;
+  flex: 0 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: clamp(32px, 6vw, 149px);
+}
+
+.pc-ravine-message {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: "Poppins", sans-serif;
+  white-space: nowrap;
+}
+
+.pc-ravine-title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  color: #0d2550;
+}
+
+.pc-ravine-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 34px;
+  color: #4b5a72;
+}
+
+.pc-ravine-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 28px 16px 32px;
+  border-radius: 12px;
+  background: #002761;
+  box-shadow: 0 8px 20px 0 rgba(37, 99, 235, 0.35);
+  font-family: "Inter", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 28px;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.pc-ravine-btn:hover {
+  background: #1147a8;
+}
+
+.pc-ravine-btn img {
+  display: block;
+}
+
+/* below desktop: everything centred in one column (matches the mobile mockup) */
+@media (max-width: 1280px) {
+  .pc-ravine-message {
+    white-space: normal;
+  }
+
+  .pc-ravine-banner {
+    flex-direction: column;
+    gap: 14px;
+    padding: 24px 24px 28px 28px;
+    text-align: center;
+  }
+
+  .pc-ravine-event {
+    align-items: center;
+    gap: 10px;
+  }
+
+  .pc-ravine-divider {
+    display: none;
+  }
+
+  .pc-ravine-main {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .pc-ravine-message {
+    align-items: center;
+    gap: 4px;
+  }
+
+  .pc-ravine-circle-small {
+    right: -40px;
+    top: auto;
+    bottom: -60px;
+  }
+
+  .pc-ravine-circle-large {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .pc-ravine-banner {
+    margin: 0 16px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pc-ravine-banner {
+    padding: 20px 16px 24px 20px;
+  }
+
+  .pc-ravine-logo {
+    width: 160px;
+    height: 32px;
+  }
+
+  .pc-ravine-pill {
+    padding: 4px 14px;
+    font-size: 13px;
+    line-height: 22px;
+  }
+
+  .pc-ravine-title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .pc-ravine-text {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .pc-ravine-btn {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+}
+
 .pc-feature-item {
   display: flex;
   align-items: center;

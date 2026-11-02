@@ -46,7 +46,11 @@ import Minus_Icon from '../assets/Minus_Icon.svg';
 import Ifen from '../assets/Ifen.svg';
 import Parvez_Image from '../assets/Parvez.jpg';
 import Jagat_Image from '../assets/Jagat.png';
-import { TAKE_A_TEST_URL, METABOLIC_SCORE_URL } from '../constants/externalLinks';
+import { TAKE_A_TEST_URL, METABOLIC_SCORE_URL, VIEW_MY_SCORE_URL } from '../constants/externalLinks';
+import ravine_logo from '../assets/ravine/ravine-run-4-logo.svg';
+import ravine_arrow from '../assets/ravine/arrow.svg';
+import ravine_circle_small from '../assets/ravine/accent-circle-small.svg';
+import ravine_circle_large from '../assets/ravine/accent-circle-large.svg';
 
 /** In-app paths use the router; full URLs are plain links (same tab on proxy.care, new tab for other sites). */
 const RibbonLink = ({ to, className, children }: { to: string; className: string; children: React.ReactNode }) => {
@@ -164,6 +168,26 @@ const Hero = () => {
           <div className="pc-risk-actions">
             <RibbonLink to={TAKE_A_TEST_URL} className="pc-risk-btn pc-risk-btn-solid">Take a test</RibbonLink>
             <RibbonLink to={METABOLIC_SCORE_URL} className="pc-risk-btn pc-risk-btn-outline">Check your Metabolic score</RibbonLink>
+          </div>
+        </div>
+        <div className="pc-ravine-banner">
+          <img src={ravine_circle_small} alt="" className="pc-ravine-circle pc-ravine-circle-small" width={150} height={150} />
+          <img src={ravine_circle_large} alt="" className="pc-ravine-circle pc-ravine-circle-large" width={260} height={260} />
+          <span className="pc-ravine-accent" aria-hidden="true" />
+          <div className="pc-ravine-event">
+            <img src={ravine_logo} alt="rAVINE run 4.0" width={200} height={40} className="pc-ravine-logo" />
+            <span className="pc-ravine-pill">@aalloahills - 1 November 2026</span>
+          </div>
+          <span className="pc-ravine-divider" aria-hidden="true" />
+          <div className="pc-ravine-main">
+            <div className="pc-ravine-message">
+              <p className="pc-ravine-title">Thank You for Participating!</p>
+              <p className="pc-ravine-text">Completed your assessment? Check your health score here.</p>
+            </div>
+            <RibbonLink to={VIEW_MY_SCORE_URL} className="pc-ravine-btn">
+              View My Score
+              <img src={ravine_arrow} alt="" width={22} height={22} />
+            </RibbonLink>
           </div>
         </div>
         <div className="pc-features-bar">
