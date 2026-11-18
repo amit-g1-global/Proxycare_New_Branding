@@ -73,7 +73,7 @@
     position:absolute;inset:0;
     display:flex;flex-direction:column;align-items:center;
     text-align:center;
-    padding:7.6cqw 9cqw 0;
+    padding:6cqw 9cqw 0;
     color:var(--white);
   }
 
@@ -89,10 +89,10 @@
   .invited{
     font-weight:500;font-size:2.4cqw;letter-spacing:.3em;
     color:var(--gold);text-transform:uppercase;
-    margin-top:2.6cqw;
+    margin-top:2cqw;
   }
   /* B — headline line 1 */
-  .h1{font-weight:700;font-size:6.6cqw;line-height:1.1;margin-top:2.6cqw;letter-spacing:-.02em;white-space:nowrap}
+  .h1{font-weight:700;font-size:6.6cqw;line-height:1.1;margin-top:2cqw;letter-spacing:-.02em;white-space:nowrap}
   /* C — AS A */
   .asa{display:flex;align-items:center;justify-content:center;gap:3cqw;margin-top:1.4cqw}
   .asa .rule{width:15cqw}
@@ -102,11 +102,11 @@
   /* E — sub-headline */
   .sub{font-weight:500;font-size:3cqw;margin-top:1.8cqw}
   /* F — short divider */
-  .short{width:10cqw;margin-top:2.6cqw}
+  .short{width:10cqw;margin-top:2cqw}
   /* G — body */
   .body{
     font-weight:400;font-size:2cqw;line-height:1.6;color:var(--body);
-    max-width:66cqw;margin-top:2.8cqw;
+    max-width:66cqw;margin-top:2.2cqw;
   }
 
   /* H — benefits heading */
@@ -114,8 +114,8 @@
     width:66cqw;height:1px;
     background:linear-gradient(90deg,transparent,rgba(212,175,90,.75),transparent);
   }
-  .fade-rule.top{margin-top:4cqw}
-  .bh{display:flex;align-items:center;justify-content:center;gap:2cqw;width:82cqw;margin:2cqw 0}
+  .fade-rule.top{margin-top:2.4cqw}
+  .bh{display:flex;align-items:center;justify-content:center;gap:2cqw;width:82cqw;margin:1.6cqw 0}
   .bh .rule{flex:1}
   .bh h2{
     font-weight:600;font-size:2.3cqw;letter-spacing:.12em;
@@ -123,9 +123,10 @@
   }
 
   /* I — table */
-  .table{width:82cqw;margin-top:1.4cqw}
-  .row{display:grid;grid-template-columns:35% 65%;align-items:center;padding:3cqw 0}
+  .table{width:82cqw;margin:.6cqw 0 2.4cqw}
+  .row{display:grid;grid-template-columns:35% 65%;align-items:center;padding:1.8cqw 0}
   .row + .row{border-top:1px solid rgba(212,175,90,.8)}
+  .row:last-child{border-bottom:1px solid rgba(212,175,90,.8)}
   .label{
     font-weight:700;font-size:2.3cqw;letter-spacing:.1em;line-height:1.35;
     text-transform:uppercase;text-align:center;
@@ -136,7 +137,7 @@
   }
   .info{text-align:left;padding-left:4cqw}
   .desc{font-weight:400;font-size:1.75cqw;line-height:1.45;color:var(--white)}
-  .val{font-weight:700;font-size:4.2cqw;line-height:1.15;margin-top:.8cqw;display:inline-block}
+  .val{font-weight:700;font-size:4.2cqw;line-height:1.15;margin-top:.5cqw;display:inline-block}
   .val small{font-size:inherit}
   .note{
     display:block;font-weight:500;font-size:1.6cqw;letter-spacing:.25em;
@@ -152,7 +153,7 @@
   .footer{display:flex;align-items:center;gap:2.5cqw;margin-top:auto;margin-bottom:0}
   /* website link under the tagline */
   .site-link{
-    display:inline-block;margin:1.8cqw 0 6.5cqw;padding:.6cqw 1cqw .3cqw;
+    display:inline-block;margin:1.4cqw 0 5.6cqw;padding:.6cqw 1cqw .3cqw;
     font-weight:500;font-size:max(10px,2.1cqw);letter-spacing:.12em;line-height:1.2;
     color:var(--gold);text-decoration:none;
     border-bottom:1px solid rgba(212,175,90,.45);padding-bottom:.4cqw;
@@ -161,8 +162,11 @@
   }
   .site-link:hover,.site-link:focus-visible{color:#F8E3A3;border-bottom-color:#F8E3A3;outline:none}
   @container (max-width:420px){
-    .row{padding:2.4cqw 0}
-    .site-link{margin-bottom:5.6cqw}
+    .row{padding:1.2cqw 0}
+    .body{margin-top:1.6cqw}
+    .fade-rule.top{margin-top:1.8cqw}
+    .table{margin-bottom:1.6cqw}
+    .site-link{margin:1cqw 0 5cqw}
   }
   .footer .rule{width:9cqw}
   .footer p{font-weight:400;font-size:2cqw;letter-spacing:.12em}
@@ -293,7 +297,7 @@
       <i class="fade-rule top a a5" aria-hidden="true"></i>
       <div class="bh a a5">
         <i class="rule"></i>
-        <h2>Exclusive Founding Member Benefits</h2>
+        <h2>Exclusive Founding Member Benefits &amp; Services</h2>
         <i class="rule"></i>
       </div>
       <i class="fade-rule a a5" aria-hidden="true"></i>
@@ -328,6 +332,14 @@
               <i class="vline" aria-hidden="true"></i>
               <p class="extra gold-text">2 Months<br>Extra</p>
             </div>
+          </div>
+        </div>
+
+        <div class="row a a9">
+          <div class="label">Ad Hoc<br>Services</div>
+          <div class="info">
+            <p class="desc">Personal assistance from a Health Assistant (HA) to accompany you for medical appointments, hospital visits, and other required visits.</p>
+            <p class="val gold-text">₹360 per hour</p>
           </div>
         </div>
       </div>
